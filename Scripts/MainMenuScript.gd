@@ -10,3 +10,12 @@ func _ready():
 
 func _on_PlayButton_pressed():
 	Global.goto_scene("res://Scenes/MainScene.tscn")
+
+func _on_CreditsButton_pressed():
+	Global.goto_scene("res://Scenes/CreditsScene.tscn")
+
+func _on_ReturnButton_pressed():
+	Global.goto_scene("res://Scenes/MainMenu.tscn")
+
+func _on_QuitButton_pressed():
+	get_tree().quit()	

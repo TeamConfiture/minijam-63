@@ -12,47 +12,48 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="GameName" type="Label" parent="Panel"]
+[node name="Title" type="Label" parent="Panel"]
 margin_left = 75.205
 margin_top = 15.1532
 margin_right = 268.205
 margin_bottom = 59.1532
-text = "TODO : trouver un nom au jeu"
+text = "Credits"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="PlayButton" type="Button" parent="Panel"]
-margin_left = 124.547
-margin_top = 83.3286
-margin_right = 209.547
-margin_bottom = 103.329
-text = "Play"
+[node name="Credits" type="Label" parent="Panel"]
+margin_left = 75.205
+margin_top = 61.5323
+margin_right = 268.205
+margin_bottom = 105.532
+text = "Never gonna give you up"
+align = 1
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="CreditsButton" type="Button" parent="Panel"]
-margin_left = 124.547
-margin_top = 108.329
-margin_right = 209.547
-margin_bottom = 128.329
-text = "Credits"
+[node name="ReturnButton" type="Button" parent="Panel"]
+margin_left = 60.9244
+margin_top = 137.438
+margin_right = 145.924
+margin_bottom = 157.438
+text = "Return"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="QuitButton" type="Button" parent="Panel"]
-margin_left = 124.547
-margin_top = 135.329
-margin_right = 209.547
-margin_bottom = 155.329
+margin_left = 186.98
+margin_top = 137.113
+margin_right = 271.98
+margin_bottom = 157.113
 text = "Quit"
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Panel/PlayButton" to="Panel" method="_on_PlayButton_pressed"]
-[connection signal="pressed" from="Panel/CreditsButton" to="Panel" method="_on_CreditsButton_pressed"]
+[connection signal="pressed" from="Panel/ReturnButton" to="Panel" method="_on_ReturnButton_pressed"]
 [connection signal="pressed" from="Panel/QuitButton" to="Panel" method="_on_QuitButton_pressed"]
