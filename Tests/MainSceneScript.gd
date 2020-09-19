@@ -7,3 +7,11 @@ func _ready():
 func _input(ev):
 	if Input.is_action_pressed("ui_cancel"):
 		Global.goto_scene("res://Global/Menus/PauseScene.tscn")
+
+
+func _on_Area2D_input_event(viewport, event, shape_idx):
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			print("Object Click")
+		else: 
+			print("Object Release")
