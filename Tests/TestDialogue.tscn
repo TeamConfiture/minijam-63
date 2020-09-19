@@ -1,0 +1,31 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tests/BG1.jpg" type="Texture" id=1]
+[ext_resource path="res://Dialogues/Dialogue.tscn" type="PackedScene" id=2]
+
+[node name="TestDialogue" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 1920, 1080 )
+rect_scale = Vector2( 0.6, 0.6 )
+texture = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Dialogue" parent="." instance=ExtResource( 2 )]
+anchor_left = 0.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = 0.0
+margin_top = -421.587
+margin_right = 0.0
+margin_bottom = -1.5874
