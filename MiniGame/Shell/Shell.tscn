@@ -61,9 +61,9 @@ custom_colors/font_color = Color( 0.447059, 0.796078, 0.145098, 1 )
 custom_colors/font_color_readonly = Color( 0.447059, 0.796078, 0.145098, 1 )
 text = "Bourne-again-again shell
 
-Welcome back user9548451337
 "
 readonly = true
+breakpoint_gutter = true
 context_menu_enabled = false
 shortcut_keys_enabled = false
 virtual_keyboard_enabled = false
@@ -104,5 +104,10 @@ caret_blink = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer"]
+margin_top = 920.0
+margin_right = 1760.0
+margin_bottom = 920.0
 [connection signal="text_changed" from="VBoxContainer/Input/LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="text_entered" from="VBoxContainer/Input/LineEdit" to="." method="_on_LineEdit_text_entered"]
