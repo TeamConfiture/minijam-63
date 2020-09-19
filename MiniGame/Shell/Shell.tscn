@@ -1,7 +1,10 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://Fonts/RobotoMono-VariableFont_wght.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://MiniGame/Shell/Shell.gd" type="Script" id=2]
+[ext_resource path="res://Assets/SoundEffects/Console/startup.wav" type="AudioStream" id=3]
+[ext_resource path="res://Assets/SoundEffects/Console/error.wav" type="AudioStream" id=5]
+[ext_resource path="res://Assets/SoundEffects/Console/ok.wav" type="AudioStream" id=6]
 
 [sub_resource type="StyleBoxEmpty" id=1]
 
@@ -109,5 +112,14 @@ __meta__ = {
 margin_top = 920.0
 margin_right = 1760.0
 margin_bottom = 920.0
+
+[node name="Startup" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+
+[node name="Error" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+
+[node name="Correct" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 6 )
 [connection signal="text_changed" from="VBoxContainer/Input/LineEdit" to="." method="_on_LineEdit_text_changed"]
 [connection signal="text_entered" from="VBoxContainer/Input/LineEdit" to="." method="_on_LineEdit_text_entered"]

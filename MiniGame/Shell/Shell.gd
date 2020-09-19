@@ -11,6 +11,10 @@ signal logged_in
 onready var line_edit = $VBoxContainer/Input/LineEdit
 onready var screen = $VBoxContainer/Output/TextEdit
 
+onready var startup_sound = $Startup
+onready var error_sound = $Error
+onready var correct_sound = $Correct
+
 var default_line_edit
 var is_loging = true
 var login
@@ -20,6 +24,7 @@ var password
 func _ready():
 	default_line_edit = line_edit.text
 	screen.text += login_querry
+	startup_sound.play()
 
 func _on_LineEdit_text_changed(new_text):
 	if new_text.length() < default_line_edit.length():
@@ -55,10 +60,12 @@ func check_user():
 		reset_login()
 		
 func successful_login():
+	correct_sound.play()
 	screen.text += "--------------------------------------\nCongratulation! This is a sample text.\n--------------------------------------"
 	emit_signal("logged_in")
 
 func reset_login():
+	error_sound.play()
 	screen.text += "***INVALID PASSWORD***"
 	screen.text += "\nYour system manager will be informed and you will be *fired*."
 	screen.text += "\nPlease try again\n\n"
