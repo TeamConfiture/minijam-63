@@ -11,4 +11,6 @@ reset = true
 [node name="Labyrinthe" type="Node2D" parent="."]
 position = Vector2( 1036.88, 268.685 )
 script = ExtResource( 2 )
+inputs = [ Vector2( 2, 0 ), Vector2( 4, 0 ), Vector2( 0, 4 ) ]
+outputs = [ Vector2( 4, 6 ), Vector2( 2, 6 ), Vector2( 6, 2 ) ]
 [connection signal="triggered" from="Bouton_laby" to="Labyrinthe" method="_on_Bouton_laby_triggered"]
