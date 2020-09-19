@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Screens/Hangar/Hangar.png" type="Texture" id=1]
 [ext_resource path="res://Screens/ScreenChanger.gd" type="Script" id=2]
+[ext_resource path="res://Screens/BackArrow.png" type="Texture" id=3]
 
 [node name="Hangar" type="Node2D"]
 
@@ -10,6 +11,11 @@ position = Vector2( 3.70813, 1.05948 )
 scale = Vector2( 0.473994, 0.368039 )
 texture = ExtResource( 1 )
 centered = false
+
+[node name="FuckGoBack" type="Sprite" parent="."]
+position = Vector2( 921.603, 1028.29 )
+scale = Vector2( 1.17052, 0.860797 )
+texture = ExtResource( 3 )
 
 [node name="ArchivesDoor" type="Area2D" parent="."]
 script = ExtResource( 2 )
@@ -35,8 +41,8 @@ polygon = PoolVector2Array( 1732.49, 429.836, 1869.69, 422.42, 1886.64, 534.193,
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LaverieDoor"]
-position = Vector2( -948.861, 437.189 )
-polygon = PoolVector2Array( 948.233, 533.186, 2872.57, 527.841, 2870.79, 665.039, 946.451, 661.475 )
+position = Vector2( -951.69, 437.189 )
+polygon = PoolVector2Array( 1718.72, 533.892, 2026.59, 534.734, 1874.68, 650.17 )
 [connection signal="input_event" from="ArchivesDoor" to="ArchivesDoor" method="_change_screen" binds= [ "Archives" ]]
 [connection signal="input_event" from="PlacardDoor" to="PlacardDoor" method="_change_screen" binds= [ "Placard" ]]
 [connection signal="input_event" from="OfficeDoor" to="OfficeDoor" method="_change_screen" binds= [ "Office" ]]
