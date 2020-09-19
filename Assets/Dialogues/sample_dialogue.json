@@ -1,0 +1,19 @@
+{
+	"nameLeft": "Name1",
+	"nameRight": "Name2",
+	"lines": [
+		{
+			"side": "left",
+			"line": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at enim ultrices, venenatis quam et, sollicitudin velit. Curabitur nec elit ut tortor dignissim sagittis ultrices in leo."
+		},
+		{
+			"side": "right",
+			"line": "Curabitur luctus at nulla ut ullamcorper. Proin sollicitudin, leo id rutrum consequat, est elit consequat massa, vitae porttitor magna nunc ac velit."
+		},
+		{
+			"side": "left",
+			"line": "Proin mattis, orci sodales iaculis suscipit, velit tortor varius felis, eget sollicitudin lacus mi at metus. Vivamus varius aliquam nulla eu auctor."
+		},
+
+	]
+}
