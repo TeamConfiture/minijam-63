@@ -1,17 +1,14 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Tests/Bouton_laby.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Tests/Labyrinthe.gd" type="Script" id=2]
-[ext_resource path="res://Tests/LabyrintheTile.tscn" type="PackedScene" id=3]
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Bouton_laby" parent="." instance=ExtResource( 1 )]
+reset = true
 
 [node name="Labyrinthe" type="Node2D" parent="."]
 position = Vector2( 1036.88, 268.685 )
 script = ExtResource( 2 )
-
-[node name="LabyrintheTile" parent="." instance=ExtResource( 3 )]
-position = Vector2( 579.222, 210.086 )
 [connection signal="triggered" from="Bouton_laby" to="Labyrinthe" method="_on_Bouton_laby_triggered"]
