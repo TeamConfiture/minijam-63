@@ -5,28 +5,26 @@
 [sub_resource type="StyleBoxFlat" id=1]
 bg_color = Color( 0.72549, 0.647059, 0.533333, 1 )
 
-[node name="Node2D" type="Node2D"]
-
-[node name="Inventory" type="MarginContainer" parent="."]
+[node name="Inventory" type="MarginContainer"]
 anchor_right = 1.0
-margin_left = 100.0
+margin_left = 673.0
 margin_top = 20.0
-margin_right = 1820.0
+margin_right = -672.0
 margin_bottom = 120.0
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Panel" type="Panel" parent="Inventory"]
-margin_right = 1720.0
+[node name="Panel" type="Panel" parent="."]
+margin_right = 575.0
 margin_bottom = 100.0
 custom_styles/panel = SubResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HBoxContainer" type="HBoxContainer" parent="Inventory/Panel"]
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 margin_left = 5.0
@@ -37,4 +35,3 @@ custom_constants/separation = 5
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="ready" from="." to="Inventory" method="_on_add_inventory_item" binds= [ "Lapignond" ]]
