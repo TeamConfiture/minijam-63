@@ -8,11 +8,23 @@
 [node name="Tube_Nixie" parent="." instance=ExtResource( 1 )]
 position = Vector2( 85.4297, 110.792 )
 
-[node name="PH_bouton" parent="." instance=ExtResource( 2 )]
+[node name="PH_bouton_+1" parent="." instance=ExtResource( 2 )]
+position = Vector2( 539.207, 258.725 )
 myNixies = [ NodePath("../Tube_Nixie") ]
 myDeltaStep = 1
 
-[node name="PH_bouton2" parent="." instance=ExtResource( 2 )]
+[node name="PH_bouton_-2" parent="." instance=ExtResource( 2 )]
 position = Vector2( 1118.53, 249.716 )
 myNixies = [ NodePath("../Tube_Nixie") ]
 myDeltaStep = -2
+
+[node name="PH_bouton_reset" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1016.8, 834.42 )
+myNixies = [ NodePath("../Tube_Nixie") ]
+isResetButton = true
+
+[node name="PH_bouton_=4" parent="." instance=ExtResource( 2 )]
+position = Vector2( 425.66, 821.692 )
+myNixies = [ NodePath("../Tube_Nixie") ]
+myDeltaStep = 4
+isSetterButton = true

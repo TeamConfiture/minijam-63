@@ -5,11 +5,13 @@ extends AnimatedSprite
 # var a = 2
 # var b = "text"
 
-export var myValue = 0;
+export var myOriginalValue = 0;
+
+var myValue;
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_changeState(myValue)
+	_changeState(myOriginalValue)
 
 func _changeState(newState: int):
 	print("Switched state to ", newState)
@@ -22,7 +24,13 @@ func _changeState(newState: int):
 		_:
 			self.play(str(newState))
 
-func _deltaState(delta: int):
+func _deltaState(delta: int, isResetButton: bool, isSetterButton: bool):
+	if (isResetButton):
+		_changeState(myOriginalValue)
+		return
+	if (isSetterButton):
+		_changeState(delta)
+		return
 	var newValue = myValue + delta
 	while newValue < 0:
 		newValue += 10
