@@ -28,7 +28,7 @@ func _ready():
 			else:
 				nodes[i].append(labyTileTemplate.instance())
 				nodes[i][j].setTileType(test[temp])
-				print(i, ";", j, " got type ", temp, " : ", test[temp])
+#				print(i, ";", j, " got type ", temp, " : ", test[temp])
 				temp += 1
 				if temp >= 5:
 					temp = 0
@@ -50,12 +50,20 @@ func _on_Bouton_laby_triggered(maDirection, monSens, reset, line, column):
 	if monSens:
 		if maDirection:
 			print("droite")
+			var tempNode = nodes[line].pop_back()
+			var tempNode2 = nodes[line].pop_front()
 			nodes[line].push_front(nodes[line].pop_back())
+			nodes[line].push_front(tempNode2)
+			nodes[line].push_back(tempNode)
 		else:
 			print("gauche")
+			var tempNode = nodes[line].pop_back()
+			var tempNode2 = nodes[line].pop_front()
 			nodes[line].push_back(nodes[line].pop_front())
+			nodes[line].push_front(tempNode2)
+			nodes[line].push_back(tempNode)
 		
-		for i in range(size):
+		for i in range(size+1):
 			nodes[line][i].set_position(Vector2((line+1)*100, (i+1)*100))
 		
 	else:
@@ -73,7 +81,7 @@ func _on_Bouton_laby_triggered(maDirection, monSens, reset, line, column):
 				nodes[i][column] = nodes[i+1][column]
 			nodes[size-1][column] = nodeTemp
 		
-		for i in range(size):
+		for i in range(size+1):
 			nodes[i][column].set_position(Vector2((i+1)*100, (column+1)*100))
 			
 	recalculatePath()
