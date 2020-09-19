@@ -24,19 +24,13 @@ func _ready():
 			taskStatus.push_back(true)
 			taskInheritance.push_back([])
 		taskActionPointer.push_back(funcref(self, "dummyAction"))
-		#print(taskStatus)
-		#print(taskInheritance)
-		#print("====")
 
 func action(actionNumber: int):
 	if taskStatus.size() <= actionNumber:
 		return false
 	if taskStatus[actionNumber]:
 		return false
-#	print(taskInheritance)
-#	print(actionNumber)
 	for task in taskInheritance[actionNumber]:
-#		print(task)
 		if not taskStatus[task]:
 			return false
 	print("Calling with ",actionNumber)
