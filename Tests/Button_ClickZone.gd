@@ -14,7 +14,7 @@ func _ready():
 func onArea2Dinputevent( viewport, event, shapeidx ):
 	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
 		# var scene = get_node(".");
-		print("Zone Triggered")
+#		print("Zone Triggered")
 		emit_signal("clicked");
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
