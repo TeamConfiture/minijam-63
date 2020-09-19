@@ -6,7 +6,7 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Tube_Nixie" parent="." instance=ExtResource( 1 )]
-position = Vector2( 85.4297, 110.792 )
+position = Vector2( 147.725, 225.944 )
 
 [node name="PH_bouton_+1" parent="." instance=ExtResource( 2 )]
 position = Vector2( 539.207, 258.725 )

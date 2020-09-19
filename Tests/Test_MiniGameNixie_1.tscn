@@ -6,19 +6,19 @@
 [node name="Node2D" type="Node2D"]
 
 [node name="Tube_Nixie" parent="." instance=ExtResource( 2 )]
-position = Vector2( 88.9629, 115.387 )
+position = Vector2( 139.36, 193.502 )
 
 [node name="Tube_Nixie2" parent="." instance=ExtResource( 2 )]
-position = Vector2( 219.218, 113.499 )
+position = Vector2( 143.01, 547.32 )
 
 [node name="Tube_Nixie3" parent="." instance=ExtResource( 2 )]
-position = Vector2( 351.36, 111.612 )
+position = Vector2( 144.594, 890.731 )
 
 [node name="RichTextLabel" type="RichTextLabel" parent="."]
-margin_left = 447.397
-margin_top = 18.8775
-margin_right = 487.397
-margin_bottom = 58.8775
+margin_left = 1407.46
+margin_top = -6.32095
+margin_right = 1447.46
+margin_bottom = 33.679
 rect_scale = Vector2( 11.72, 8.03137 )
 text = "Entrez 666"
 __meta__ = {
