@@ -8,7 +8,6 @@
 radius = 93.7814
 
 [node name="PH_bouton" type="Sprite"]
-position = Vector2( 539.207, 257.725 )
 texture = ExtResource( 1 )
 script = ExtResource( 3 )
 
