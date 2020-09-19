@@ -5,7 +5,7 @@ var current_item = "none"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	_on_add_inventory_item("Lapignon")
+	#_on_add_inventory_item("Lapignon")
 	self.visible = false
 
 func _process(delta):
