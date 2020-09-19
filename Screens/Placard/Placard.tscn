@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Screens/Placard/Placard.png" type="Texture" id=1]
+[ext_resource path="res://Screens/ScreenChanger.gd" type="Script" id=2]
+
+[node name="Hangar" type="Node2D"]
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 3.70813, 1.05948 )
+scale = Vector2( 1.15088, 0.487663 )
+texture = ExtResource( 1 )
+centered = false
+
+[node name="HangarDoor" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HangarDoor"]
+position = Vector2( -948.861, 437.189 )
+polygon = PoolVector2Array( 948.233, 533.186, 2872.57, 527.841, 2870.79, 665.039, 946.451, 661.475 )
+[connection signal="input_event" from="HangarDoor" to="HangarDoor" method="_change_screen" binds= [ "Hangar" ]]
