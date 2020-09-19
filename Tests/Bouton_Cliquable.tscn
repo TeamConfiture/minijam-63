@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://Docs/PH_bouton.png" type="Texture" id=1]
+[ext_resource path="res://Tests/Button_ClickZone.gd" type="Script" id=2]
+[ext_resource path="res://Tests/Bouton_Cliquable.gd" type="Script" id=3]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 93.7814
+
+[node name="PH_bouton" type="Sprite"]
+texture = ExtResource( 1 )
+script = ExtResource( 3 )
+
+[node name="Button_ClickZone" type="Area2D" parent="."]
+script = ExtResource( 2 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Button_ClickZone"]
+position = Vector2( 30.7013, -9.3439 )
+shape = SubResource( 1 )
+[connection signal="clicked" from="Button_ClickZone" to="." method="getPressed"]
+[connection signal="input_event" from="Button_ClickZone" to="Button_ClickZone" method="onArea2Dinputevent"]

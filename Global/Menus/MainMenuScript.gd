@@ -9,7 +9,7 @@ func _ready():
 #	pass
 
 func _on_PlayButton_pressed():
-	Global.goto_scene("res://Tests/MainScene.tscn")
+	Global.goto_scene("res://Screens/Office/Office.tscn")
 	Inventory.visible = true
 
 func _on_CreditsButton_pressed():
