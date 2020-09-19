@@ -16,14 +16,14 @@ _global_script_class_icons={
 [application]
 
 config/name="minijam-63"
-run/main_scene="res://Scenes/MainMenu.tscn"
+run/main_scene="res://Global/Menus/MainMenu.tscn"
 config/icon="res://icon.png"
 
 [autoload]
 
-Global="*res://Scripts/Global.gd"
-Cursor="*res://Scripts/Cursor.gd"
-Tasks="*res://Scripts/Tasks.gd"
+Global="*res://Global/Singletons/Global.gd"
+Cursor="*res://Global/Singletons/Cursor.gd"
+Tasks="*res://Global/Singletons/Tasks.gd"
 
 [debug]
 

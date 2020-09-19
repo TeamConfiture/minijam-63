@@ -12,7 +12,7 @@ func _ready():
 
 
 func _on_ReturnButton_pressed():
-	Global.goto_scene("res://Scenes/MainScene.tscn")
+	Global.goto_scene("res://Tests/MainScene.tscn")
 
 func _on_QuitButton_pressed():
 	get_tree().quit()	

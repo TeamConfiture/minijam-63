@@ -1,6 +1,8 @@
 [gd_scene load_steps=2 format=2]
 
-[ext_resource path="res://Scripts/MainMenuScript.gd" type="Script" id=1]
+[ext_resource path="res://Global/Menus/MainMenuScript.gd" type="Script" id=1]
+
+
 
 [node name="MainMenu" type="Node2D"]
 

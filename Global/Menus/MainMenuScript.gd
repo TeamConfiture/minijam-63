@@ -9,13 +9,13 @@ func _ready():
 #	pass
 
 func _on_PlayButton_pressed():
-	Global.goto_scene("res://Scenes/MainScene.tscn")
+	Global.goto_scene("res://Tests/MainScene.tscn")
 
 func _on_CreditsButton_pressed():
-	Global.goto_scene("res://Scenes/CreditsScene.tscn")
+	Global.goto_scene("res://Global/CreditsScene.tscn")
 
 func _on_ReturnButton_pressed():
-	Global.goto_scene("res://Scenes/MainMenu.tscn")
+	Global.goto_scene("res://Global/Menus/MainMenu.tscn")
 
 func _on_QuitButton_pressed():
 	get_tree().quit()	

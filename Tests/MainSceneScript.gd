@@ -6,4 +6,4 @@ func _ready():
 
 func _input(ev):
 	if Input.is_action_pressed("ui_pause") or Input.is_key_pressed(KEY_ESCAPE):
-		Global.goto_scene("res://Scenes/PauseScene.tscn")
+		Global.goto_scene("res://Global/Menus/PauseScene.tscn")
