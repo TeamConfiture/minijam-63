@@ -12,16 +12,9 @@ export var myRotate = 0
 func _ready():
 	pass # Replace with function body.
 
-func rotateTile(left: bool):
-	if left:
-		myRotate += 1
-		if myRotate >= 3:
-			myRotate = 0
-	else:
-		myRotate -= 1
-		if myRotate < 0:
-			myRotate = 3
-	self.rotate(myRotate*PI/2)
+func rotateTile(angle: int):
+	myRotate = angle
+	self.rotate(-1 * myRotate*PI/2)
 
 func setTileType(newType: String):
 	myRotate = 0

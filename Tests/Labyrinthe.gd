@@ -1,8 +1,12 @@
 extends Node2D
 
+
 export var size = 5
+export var originalTab= []
 export var inputs = []
 export var outputs = []
+
+var status = []
 
 var nodes = []
 var buttons = {}
@@ -15,10 +19,13 @@ var labyTileTemplate =  preload("res://Tests/LabyrintheTile.tscn")
 var labyButtonTemplate =  preload("res://Tests/Bouton_laby.tscn")
 
 func generateLab():
+	status.clear()
 	nodes.clear()
 	buttons.clear()
 	inNodes.clear()
 	outNodes.clear()
+	status.append([0,0,0,0,0])
+	status.append([0,0,0,0,0])
 	var temp = 0
 	var test = ["default", "i", "T", "I", "r"]
 	var inImgs = ["res://Docs/PH_InputB.png", "res://Docs/PH_InputR.png", "res://Docs/PH_InputV.png"]
@@ -54,13 +61,14 @@ func generateLab():
 		for j in range(size): # selon y
 			 # on a donc x;y <=> colonne;ligne <=> i;j
 			nodes[i].append(labyTileTemplate.instance())
-			nodes[i][j].setTileType(test[temp])
 #				print(i, ";", j, " got type ", temp, " : ", test[temp])
-			temp += 1
-			if temp >= 5:
-				temp = 0
+			nodes[i][j].setTileType(originalTab[0][j*size+i])
+			nodes[i][j].rotateTile(originalTab[1][j*size+i])
+#			nodes[i][j].setTileType(test[temp])
+#			temp += 1
+#			if temp >= 5:
+#				temp = 0
 			self.add_child(nodes[i][j])
-#			nodes[i][j].set_texture(load("res://Docs/PH_Labyrinthe_p.png"))
 			nodes[i][j].set_position(Vector2(i*100, j*100))
 	temp = 0
 	for e in inputs:
@@ -122,8 +130,8 @@ func shuffle():
 func _ready():
 	rng.randomize()
 	generateLab()
-	shuffle()
-	shuffle()
+#	shuffle()
+#	shuffle()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -131,13 +139,23 @@ func _ready():
 #	pass
 
 func recalculatePath():
-	pass
-
+	for e in status:
+		for f in e:
+			while f < 0:
+				f += 5
+			while f > 4:
+				f -= 5
+			if f != 0:
+				print("False")
+				return false
+	print("True")
+	return true
+	
 func _on_Bouton_laby_triggered(maDirection, monSens, reset, line, column):
 	if reset:
 		generateLab()
-		shuffle()
-		shuffle()
+#		shuffle()
+#		shuffle()
 		return
 	
 #	print("Ayudame por favor, I received a signal to move ", line, ";", column, " in...")
@@ -145,6 +163,7 @@ func _on_Bouton_laby_triggered(maDirection, monSens, reset, line, column):
 	if monSens:
 		var nodeTemp = null
 		if maDirection:
+			status[0][line] += 1
 #			print("droite")
 			nodeTemp = nodes[size-1][line]
 			for i in range(size-1, 0, -1):
@@ -152,6 +171,7 @@ func _on_Bouton_laby_triggered(maDirection, monSens, reset, line, column):
 				nodes[i][line] = nodes[i-1][line]
 			nodes[0][line] = nodeTemp
 		else:
+			status[0][line] -= 1
 #			print("gauche")
 			nodeTemp = nodes[0][line]
 			for i in range(size-1):
@@ -163,9 +183,11 @@ func _on_Bouton_laby_triggered(maDirection, monSens, reset, line, column):
 		
 	else:
 		if maDirection:
+			status[1][column] += 1
 #			print("bas")
 			nodes[column].push_front(nodes[column].pop_back())
 		else:
+			status[1][column] -= 1
 #			print("haut")
 			nodes[column].push_back(nodes[column].pop_front())
 		
