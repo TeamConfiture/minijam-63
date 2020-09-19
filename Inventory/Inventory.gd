@@ -1,7 +1,7 @@
 extends MarginContainer
 
 onready var container = $Panel/HBoxContainer
-var current_item = "none"
+export var current_item = "none"
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
