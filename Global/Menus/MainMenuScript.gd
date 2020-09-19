@@ -10,6 +10,7 @@ func _ready():
 
 func _on_PlayButton_pressed():
 	Global.goto_scene("res://Tests/MainScene.tscn")
+	Inventory.visible = true
 
 func _on_CreditsButton_pressed():
 	Global.goto_scene("res://Global/CreditsScene.tscn")
