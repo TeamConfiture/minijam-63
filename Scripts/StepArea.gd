@@ -16,7 +16,8 @@ func _ready():
 func onArea2Dinputevent( viewport, event, shapeidx ):
 	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
 		var scene = get_node(".");
-		emit_signal("step", myStep);
+		# emit_signal("step", myStep);
+		Tasks.action(myStep);
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

@@ -22,6 +22,7 @@ config/icon="res://icon.png"
 [autoload]
 
 Global="*res://Scripts/Global.gd"
+Tasks="*res://Scripts/Tasks.gd"
 
 [rendering]
 
