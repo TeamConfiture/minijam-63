@@ -3,11 +3,11 @@ extends VBoxContainer
 export(String) var dialogue_file = "res://Assets/Dialogues/sample_dialogue.json"
 export(float) var dialogue_speed = 100.0
 
-onready var box_name_left = $Names/NameLeft
-onready var name_left = $Names/NameLeft/TextLeft
-onready var box_name_right = $Names/NameRight
-onready var name_right = $Names/NameRight/TextRight
-onready var main_text = $MainText/TextZone
+onready var box_name_left = $NamesMargin/Names/NameLeft
+onready var name_left = $NamesMargin/Names/NameLeft/TextLeft
+onready var box_name_right = $NamesMargin/Names/NameRight
+onready var name_right = $NamesMargin/Names/NameRight/TextRight
+onready var main_text = $TextMargin/MainText/MarginContainer/TextZone
 
 var lines
 var line = 0
