@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Tests/Tube_Nixie.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Tests/Bouton_Cliquable.tscn" type="PackedScene" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Tube_Nixie" parent="." instance=ExtResource( 1 )]
+position = Vector2( 85.4297, 110.792 )
+
+[node name="PH_bouton" parent="." instance=ExtResource( 2 )]
+myNixies = [ NodePath("../Tube_Nixie") ]
+myDeltaStep = 1
+
+[node name="PH_bouton2" parent="." instance=ExtResource( 2 )]
+position = Vector2( 1118.53, 249.716 )
+myNixies = [ NodePath("../Tube_Nixie") ]
+myDeltaStep = -2
