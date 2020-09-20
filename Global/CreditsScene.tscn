@@ -1,59 +1,311 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Global/Menus/MainMenuScript.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/venus rising rg.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://Fonts/flipside.ttf" type="DynamicFontData" id=3]
+[ext_resource path="res://Fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=4]
 
-[node name="MainMenu" type="Node2D"]
+[sub_resource type="DynamicFont" id=1]
+size = 100
+font_data = ExtResource( 3 )
 
-[node name="Panel" type="Panel" parent="."]
-margin_right = 351.0
-margin_bottom = 207.0
+[sub_resource type="DynamicFont" id=2]
+size = 30
+font_data = ExtResource( 2 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 30
+font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=4]
+bg_color = Color( 0.588235, 0.647059, 0.670588, 1 )
+
+[sub_resource type="StyleBoxFlat" id=5]
+bg_color = Color( 0.164706, 0.215686, 0.278431, 1 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 46
+font_data = ExtResource( 4 )
+
+[node name="ColorRect" type="ColorRect"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0901961, 0.0980392, 0.105882, 1 )
 script = ExtResource( 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Title" type="Label" parent="Panel"]
-margin_left = 75.205
-margin_top = 15.1532
-margin_right = 268.205
-margin_bottom = 59.1532
-text = "Credits"
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 0.00012207
+margin_bottom = 26.0
+custom_constants/margin_right = 0
+custom_constants/margin_top = 200
+custom_constants/margin_left = 0
+custom_constants/margin_bottom = 0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_top = 200.0
+margin_right = 1920.0
+margin_bottom = 1106.0
+custom_constants/separation = 160
+
+[node name="GameName" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_right = 1920.0
+margin_bottom = 100.0
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Confuture"
 align = 1
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Credits" type="Label" parent="Panel"]
-margin_left = 75.205
-margin_top = 61.5323
-margin_right = 268.205
-margin_bottom = 105.532
-text = "Never gonna give you up"
-align = 1
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 260.0
+margin_right = 1920.0
+margin_bottom = 696.0
+custom_constants/margin_right = 200
+custom_constants/margin_left = 200
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/VBoxContainer/MarginContainer"]
+margin_left = 200.0
+margin_right = 1720.0
+margin_bottom = 436.0
+custom_constants/separation = 60
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="GridContainer" type="GridContainer" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_right = 1520.0
+margin_bottom = 324.0
+columns = 2
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_right = 457.0
+margin_bottom = 37.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Graphics : "
+align = 2
 valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ReturnButton" type="Button" parent="Panel"]
-margin_left = 60.9244
-margin_top = 137.438
-margin_right = 145.924
-margin_bottom = 157.438
-text = "Return"
+[node name="Members" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 461.0
+margin_top = 1.0
+margin_right = 1238.0
+margin_bottom = 36.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Ashrell, Catnip, Eagletin, Jeanne, Kimi, Strapontin"
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="QuitButton" type="Button" parent="Panel"]
-margin_left = 186.98
-margin_top = 137.113
-margin_right = 271.98
-margin_bottom = 157.113
-text = "Quit"
+[node name="Title2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 41.0
+margin_right = 457.0
+margin_bottom = 78.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Programming : "
+align = 2
+valign = 1
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="pressed" from="Panel/ReturnButton" to="Panel" method="_on_ReturnButton_pressed"]
-[connection signal="pressed" from="Panel/QuitButton" to="Panel" method="_on_QuitButton_pressed"]
+
+[node name="Members2" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 461.0
+margin_top = 42.0
+margin_right = 1238.0
+margin_bottom = 77.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "DoctorTee, Kimi, Lugrim, Metatheria, Rileran"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title6" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 82.0
+margin_right = 457.0
+margin_bottom = 119.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Narrative Design : "
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Members6" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 461.0
+margin_top = 83.0
+margin_right = 1238.0
+margin_bottom = 118.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Bobby, Chouibidi"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title3" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 123.0
+margin_right = 457.0
+margin_bottom = 160.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Music : "
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Members3" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 461.0
+margin_top = 124.0
+margin_right = 1238.0
+margin_bottom = 159.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "BynaryCobweb"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title5" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 164.0
+margin_right = 457.0
+margin_bottom = 201.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Voice Acting : "
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Members5" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 461.0
+margin_top = 165.0
+margin_right = 1238.0
+margin_bottom = 200.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Germophobe"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title8" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 205.0
+margin_right = 457.0
+margin_bottom = 242.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Cutscenes : "
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Members8" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 461.0
+margin_top = 206.0
+margin_right = 1238.0
+margin_bottom = 241.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Tonysan"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title7" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 246.0
+margin_right = 457.0
+margin_bottom = 283.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Translation : "
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Members7" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 461.0
+margin_top = 247.0
+margin_right = 1238.0
+margin_bottom = 282.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Elnath, Jeanne, Metatheria, Trino"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Title4" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_top = 287.0
+margin_right = 457.0
+margin_bottom = 324.0
+custom_fonts/font = SubResource( 2 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Moral Support : "
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Members4" type="Label" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/GridContainer"]
+margin_left = 461.0
+margin_top = 288.0
+margin_right = 1238.0
+margin_bottom = 323.0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Azryl Askanby, Scipio, Tyney"
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ReturnButton" type="Button" parent="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer"]
+margin_top = 384.0
+margin_right = 1520.0
+margin_bottom = 436.0
+custom_styles/hover = SubResource( 4 )
+custom_styles/pressed = SubResource( 5 )
+custom_styles/normal = SubResource( 5 )
+custom_fonts/font = SubResource( 6 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Back"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MarginContainer/VBoxContainer/ReturnButton" to="." method="_on_ReturnButton_pressed"]
