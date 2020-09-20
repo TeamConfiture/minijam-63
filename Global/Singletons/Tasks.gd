@@ -23,11 +23,20 @@ var miniGameLockpick =  preload("res://MiniGame/Lockpicking/Lock.tscn")
 var miniGameShell =  preload("res://MiniGame/Shell/Shell.tscn")
 
 func _on_dialogue_E2A_end():
+	print("_on_dialogue_E2A_end")
 	action(29)
 
+func _on_dialogue_JanitorCle_end():
+	print("_on_dialogue_JanitorCle_end")
+	triggerItemInventory(21)
+
 func _on_dialogue_Laby_end():
+	print("_on_dialogue_Laby_end")
 	triggerMinigame(18)
-	Inventory._on_add_inventory_item("ClefArchive")
+
+func _on_laby_end():
+	print("_on_laby_end")
+	triggerItemInventory(19)
 
 func dummyAction(actionId: int):
 	print("Dummy action ", actionId, "was called !")
@@ -67,6 +76,7 @@ func triggerDialogue(actionId: int):
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Laverie/L1_02.json"
 		19:
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_06.json"
+			newDialogue.connect("end_dialogue", self, "_on_dialogue_JanitorCle_end")
 		20:
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_07.json"
 		21:
@@ -109,6 +119,7 @@ func triggerMinigame(actionId: int):
 		18:
 			print("Item handling for 18")
 			sceneInstance = miniGameLaby.instance()
+			sceneInstance.connect("end_minigame", self, "_on_laby_end")
 		22:
 			print("Item handling for 22")
 			sceneInstance = miniGameLockpick.instance()
@@ -117,7 +128,8 @@ func triggerMinigame(actionId: int):
 			sceneInstance = miniGameShell.instance()
 		_:
 			print("Unrecognised event id : ", actionId)
-	self.add_child(sceneInstance)
+	get_tree().get_root().add_child(sceneInstance)
+#	self.add_child(sceneInstance)
 
 func triggerCinematic(actionId: int):
 	print("We should trigger a cinematic for task id ",actionId, " here !")
@@ -134,6 +146,10 @@ func triggerItemInventory(actionId: int):
 	match actionId:
 		19:
 			print("Item handling for 19")
+			Inventory._on_add_inventory_item("TenueBalayeur")
+		21:
+			print("Item handling for 21")
+			Inventory._on_add_inventory_item("ClefPlacard")
 		24:
 			print("Item handling for 24")
 		27:

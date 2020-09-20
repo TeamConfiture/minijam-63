@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/BG.png-1346f0d1f25a70fb2f8b7f769c75c890.stex"
+path="res://.import/ClefPlacard.png-09e16b3bf08828f701a8c9595ba03c2b.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cursors/BG.png"
-dest_files=[ "res://.import/BG.png-1346f0d1f25a70fb2f8b7f769c75c890.stex" ]
+source_file="res://Assets/Cursors/ClefPlacard.png"
+dest_files=[ "res://.import/ClefPlacard.png-09e16b3bf08828f701a8c9595ba03c2b.stex" ]
 
 [params]
 
