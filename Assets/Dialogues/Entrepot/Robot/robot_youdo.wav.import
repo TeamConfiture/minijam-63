@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/robot_youdo.wav-2d4dab274db7470c478533ddca5c2d63.sample"
+
+[deps]
+
+source_file="res://Assets/Dialogues/Entrepot/Robot/robot_youdo.wav"
+dest_files=[ "res://.import/robot_youdo.wav-2d4dab274db7470c478533ddca5c2d63.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0
