@@ -1,6 +1,6 @@
 extends Node
 
-var current_scene = null
+#var current_scene = null
 
 export var taskStatus = [1] # tab de bool
 export var taskInheritance = [2] # liste de liste d'int
@@ -21,6 +21,9 @@ var dialogueTemplate =  preload("res://Dialogues/Dialogue.tscn")
 var miniGameLaby =  preload("res://MiniGame/Labyrinthe/Scene_Labyrinthe.tscn")
 var miniGameLockpick =  preload("res://MiniGame/Lockpicking/Lock.tscn")
 var miniGameShell =  preload("res://MiniGame/Shell/Shell.tscn")
+
+func _on_dialogue_E2A_end():
+	action(29)
 
 func dummyAction(actionId: int):
 	print("Dummy action ", actionId, "was called !")
@@ -60,8 +63,9 @@ func triggerDialogue(actionId: int):
 			print("Dialogue for 20")
 		21:
 			print("Dialogue for 21")
-		26:
+		26: # Transition Entrepot -> Archive
 			print("Dialogue for 26")
+			newDialogue.connect("end_dialogue", self, "_on_dialogue_E2A_end")
 		29:
 			print("Dialogue for 29")
 		31:
@@ -80,6 +84,7 @@ func triggerDialogue(actionId: int):
 			print("Unrecognised event id : ", actionId)
 			return false
 	self.add_child(newDialogue)
+	newDialogue.start_dialogue()
 	
 func triggerChangeScreen(actionId: int):
 	print("We should trigger a scene change for task id ",actionId, " here !")

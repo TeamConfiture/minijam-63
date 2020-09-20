@@ -1,5 +1,6 @@
 extends Node2D
 
+signal end_minigame()
 
 export var size = 5
 export var originalTab= []
@@ -116,12 +117,14 @@ func shuffle():
 	var rnd=0
 	var rndDir = false
 	for i in range(size):
-		rnd = rng.randi_range(0,4)
+		# rnd = rng.randi_range(0,4)
+		rnd = rng.randi_range(0,0)
 		for j in range(rnd):
 			rndDir = (rng.randi_range(0,4) % 2 == 1)
 			_on_Bouton_laby_triggered(true, rndDir, false, i, 0)
 	for i in range(size):
-		rnd = rng.randi_range(0,4)
+		# rnd = rng.randi_range(0,4)
+		rnd = rng.randi_range(0,1)
 		for j in range(rnd):
 			rndDir = (rng.randi_range(0,4) % 2 == 1)
 			_on_Bouton_laby_triggered(rndDir, true, false, 0, i)
@@ -130,8 +133,8 @@ func shuffle():
 func _ready():
 	rng.randomize()
 	generateLab()
-#	shuffle()
-#	shuffle()
+	shuffle()
+	shuffle()
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -146,16 +149,17 @@ func recalculatePath():
 			while f > 4:
 				f -= 5
 			if f != 0:
-				print("False")
+#				print("False")
 				return false
-	print("True")
+#	print("True")
+	emit_signal("end_minigame")
 	return true
 	
 func _on_Bouton_laby_triggered(maDirection, monSens, reset, line, column):
 	if reset:
 		generateLab()
-#		shuffle()
-#		shuffle()
+		shuffle()
+		shuffle()
 		return
 	
 #	print("Ayudame por favor, I received a signal to move ", line, ";", column, " in...")

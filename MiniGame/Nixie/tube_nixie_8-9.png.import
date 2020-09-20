@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tube_nixie_8-9.png-a5c92028b8f417db51bff7408a6e0701.stex"
+path="res://.import/tube_nixie_8-9.png-2d94ba190c92985858258a4a24718901.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tests/tube_nixie_8-9.png"
-dest_files=[ "res://.import/tube_nixie_8-9.png-a5c92028b8f417db51bff7408a6e0701.stex" ]
+source_file="res://MiniGame/Nixie/tube_nixie_8-9.png"
+dest_files=[ "res://.import/tube_nixie_8-9.png-2d94ba190c92985858258a4a24718901.stex" ]
 
 [params]
 
