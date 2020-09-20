@@ -1,14 +1,25 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Screens/Hangar/Hangar.png" type="Texture" id=1]
 [ext_resource path="res://Screens/ScreenChanger.gd" type="Script" id=2]
 [ext_resource path="res://Screens/BackArrow.png" type="Texture" id=3]
+[ext_resource path="res://Global/ClickableNode.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Global/ClickableNode.gd" type="Script" id=5]
+[ext_resource path="res://Screens/Hangar/Hangar.gd" type="Script" id=6]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 74.6505
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 164.756
+height = 195.326
 
 [node name="Hangar" type="Node2D"]
+script = ExtResource( 6 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 3.70813, 1.05948 )
-scale = Vector2( 0.473994, 0.368039 )
+scale = Vector2( 0.998325, 1.00215 )
 texture = ExtResource( 1 )
 centered = false
 
@@ -21,21 +32,15 @@ texture = ExtResource( 3 )
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ArchivesDoor"]
-polygon = PoolVector2Array( 1595.64, 358.769, 1776.43, 382.314, 1773.07, 645.515, 1587.23, 589.175 )
-
-[node name="PlacardDoor" type="Area2D" parent="."]
-script = ExtResource( 2 )
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PlacardDoor"]
-position = Vector2( -1277.86, -63.496 )
-polygon = PoolVector2Array( 1721.35, 376.669, 1837.9, 378.258, 1820.41, 536.118, 1720.82, 524.994 )
+position = Vector2( -80.1807, -3.5636 )
+polygon = PoolVector2Array( 1603.55, 350.111, 1776.43, 382.314, 1774.61, 756.361, 1605.33, 702.907 )
 
 [node name="OfficeDoor" type="Area2D" parent="."]
 script = ExtResource( 2 )
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="OfficeDoor"]
 position = Vector2( -1536.85, -63.496 )
-polygon = PoolVector2Array( 1732.49, 429.836, 1869.69, 422.42, 1886.64, 534.193, 1734.61, 543.198 )
+polygon = PoolVector2Array( 1700.37, 303.043, 1855.1, 301.362, 1853.42, 582.221, 1702.9, 591.471 )
 
 [node name="LaverieDoor" type="Area2D" parent="."]
 script = ExtResource( 2 )
@@ -43,7 +48,59 @@ script = ExtResource( 2 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LaverieDoor"]
 position = Vector2( -951.69, 437.189 )
 polygon = PoolVector2Array( 1718.72, 533.892, 2026.59, 534.734, 1874.68, 650.17 )
+
+[node name="ClickableNode" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1525.71, 361.15 )
+myStepRight = 14
+myStepItem = {
+"Item4": -1,
+"Item5": -1,
+"PassBalayeur": -1,
+"PassHeros": 13,
+"TenueBalayeur": -1,
+"none": 12
+}
+
+[node name="CollisionShape2D" parent="ClickableNode" index="0"]
+position = Vector2( -75.2314, -1.01855 )
+shape = SubResource( 1 )
+
+[node name="ClickableNode2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1164.82, 366.901 )
+myStepRight = 15
+myStepItem = {
+"Item4": -1,
+"Item5": -1,
+"PassBalayeur": -1,
+"PassHeros": -1,
+"TenueBalayeur": 19,
+"none": 16
+}
+
+[node name="CollisionShape2D" parent="ClickableNode2" index="0"]
+position = Vector2( -116.503, 136.862 )
+shape = SubResource( 2 )
+
+[node name="ClickableNode3" type="Area2D" parent="."]
+position = Vector2( 482.537, 337.561 )
+script = ExtResource( 5 )
+myStepRight = 20
+myStepItem = {
+"ClefPlacard": 22,
+"Item5": -1,
+"PassBalayeur": -1,
+"PassHeros": -1,
+"TenueBalayeur": -1,
+"none": 21
+}
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickableNode3"]
+polygon = PoolVector2Array( 44.2636, 163.496, -82.5461, 172.173, -86.3003, -85.7738, 65.0611, -89.9783, 64.9537, 132.128, 44.2636, 144.809 )
 [connection signal="input_event" from="ArchivesDoor" to="ArchivesDoor" method="_change_screen" binds= [ "Archives" ]]
-[connection signal="input_event" from="PlacardDoor" to="PlacardDoor" method="_change_screen" binds= [ "Placard" ]]
 [connection signal="input_event" from="OfficeDoor" to="OfficeDoor" method="_change_screen" binds= [ "Office" ]]
 [connection signal="input_event" from="LaverieDoor" to="LaverieDoor" method="_change_screen" binds= [ "Laverie" ]]
+[connection signal="input_event" from="ClickableNode3" to="ClickableNode3" method="onArea2Dinputevent"]
+
+[editable path="ClickableNode"]
+
+[editable path="ClickableNode2"]

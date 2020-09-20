@@ -25,6 +25,7 @@ Global="*res://Global/Singletons/Global.gd"
 Cursor="*res://Global/Singletons/Cursor.gd"
 Tasks="*res://Global/Singletons/Tasks.gd"
 Inventory="*res://Inventory/Inventory.tscn"
+Bgm="*res://Global/BGM.tscn"
 
 [debug]
 

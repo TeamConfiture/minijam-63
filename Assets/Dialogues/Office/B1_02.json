@@ -1,0 +1,12 @@
+{
+	"nameLeft": "MC",
+	"nameRight": "",
+	"imageLeft": "res://Assets/Sprites/MC_thinking.png",
+	"imageRight": "",
+	"lines": [
+		{
+			"side": "left",
+			"line": "I’m pretty sure my coworkers are all robots. This one takes a nap every day at exactly 2:48pm… Probably to recharge its batteries."
+		}
+	]
+}

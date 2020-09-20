@@ -1,15 +1,15 @@
 extends Area2D
 
-signal step(step);
+#signal step(step);
 
 export var myStepRight = -1;
-export var myStepItem = {"none": -1,"PassHeros": -1,"PassBalayeur": -1,"TenueBalayeur": -1,"Item4": -1,"Item5": -1};
+export var myStepItem = {"none": -1,"PassHeros": -1,"PassBalayeur": -1,"TenueBalayeur": -1,"ClefPlacard": -1,"Item5": -1};
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
 
-func onArea2Dinputevent( viewport, event, shapeidx ):
+func onArea2Dinputevent(_viewport, event, _shapeidx):
 	var oldItem = "none"
 	if (event is InputEventMouseButton and event.pressed): # En cas de clic
 		if (event.button_index == BUTTON_LEFT): # Clic gauche

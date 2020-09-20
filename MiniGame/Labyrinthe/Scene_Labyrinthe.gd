@@ -19,3 +19,4 @@ func _ready():
 func _on_Labyrinthe_end_minigame():
 	print("Laby minigame succeed")
 	queue_free()
+	emit_signal("end_minigame")

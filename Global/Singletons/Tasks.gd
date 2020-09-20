@@ -25,6 +25,10 @@ var miniGameShell =  preload("res://MiniGame/Shell/Shell.tscn")
 func _on_dialogue_E2A_end():
 	action(29)
 
+func _on_dialogue_Laby_end():
+	triggerMinigame(18)
+	Inventory._on_add_inventory_item("ClefArchive")
+
 func dummyAction(actionId: int):
 	print("Dummy action ", actionId, "was called !")
 
@@ -33,57 +37,62 @@ func triggerDialogue(actionId: int):
 	print("We should trigger a dialogue for task id ",actionId, " here !")
 	match actionId:
 		0:
-			#newDialogue.dialogue_file = "Truc"
-			print("Dialogue for 0")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B0_01.json"
 		2:
-			print("Dialogue for 2")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E0_01.json"
 		6:
-			print("Dialogue for 6")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_01.json"
 		7:
-			print("Dialogue for 7")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_02.json"
 		8:
-			print("Dialogue for 8")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_03.json"
 		9:
-			print("Dialogue for 9")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_04.json"
 		10:
-			print("Dialogue for 10")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_05.json"
 		12:
-			print("Dialogue for 12")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_01.json"
 		13:
-			print("Dialogue for 13")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_02.json"
 		14:
-			print("Dialogue for 14")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_03.json"
 		15:
-			print("Dialogue for 15")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_04.json"
 		16:
-			print("Dialogue for 16")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_05.json"
 		17:
-			print("Dialogue for 17")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Laverie/L1_01.json"
+		18:
+			newDialogue.connect("end_dialogue", self, "_on_dialogue_Laby_end")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Laverie/L1_02.json"
+		19:
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_06.json"
 		20:
-			print("Dialogue for 20")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_07.json"
 		21:
-			print("Dialogue for 21")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_08.json"
 		26: # Transition Entrepot -> Archive
-			print("Dialogue for 26")
 			newDialogue.connect("end_dialogue", self, "_on_dialogue_E2A_end")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_10.json"
 		29:
-			print("Dialogue for 29")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_01.json"
 		31:
-			print("Dialogue for 31")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_02.json"
+		32:
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_03.json"
 		33:
-			print("Dialogue for 33")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_04.json"
 		34:
-			print("Dialogue for 34")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_05.json"
 		35:
-			print("Dialogue for 35")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_06.json"
 		36:
-			print("Dialogue for 36")
-		37:
-			print("Dialogue for 37")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_07.json"
+
 		_:
 			print("Unrecognised event id : ", actionId)
 			return false
-	self.add_child(newDialogue)
+	get_tree().get_root().add_child(newDialogue)
 	newDialogue.start_dialogue()
 	
 func triggerChangeScreen(actionId: int):
@@ -103,8 +112,8 @@ func triggerMinigame(actionId: int):
 		22:
 			print("Item handling for 22")
 			sceneInstance = miniGameLockpick.instance()
-		32:
-			print("Item handling for 32")
+		37:
+			print("Item handling for 37")
 			sceneInstance = miniGameShell.instance()
 		_:
 			print("Unrecognised event id : ", actionId)
@@ -138,7 +147,7 @@ func createStateChart():
 	# 0: EVB0_01
 	# Dep : none
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([])
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 1: EVB0_02
@@ -150,7 +159,7 @@ func createStateChart():
 	# 2: EVE0_01
 	# Dep : EVB0_02
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([1])
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 3: EVE0_02
@@ -174,7 +183,7 @@ func createStateChart():
 	# 6: EVB1_01
 	# Dep : EVE0_01
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([2])
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 7: EVB1_02
@@ -206,7 +215,7 @@ func createStateChart():
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
 	taskInheritance.push_back([2])
-	taskActionPointer.push_back(funcref(self, "triggerCinematic"))
+	taskActionPointer.push_back(funcref(self, "triggerCinematic")) # ordre de licenciement
 	# 12: EVE1_01
 	# Dep : EVE0_01
 	# Repeat : inf
@@ -246,15 +255,15 @@ func createStateChart():
 	# 18: EVL1_02
 	# Dep : EVE0_01
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([2])
-	taskActionPointer.push_back(funcref(self, "triggerMinigame"))
+	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 19: EVE1_06
 	# Dep : EVE0_01
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([2])
-	taskActionPointer.push_back(funcref(self, "triggerItemInventory"))
+	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 20: EVE1_07
 	# Dep : EVE0_01
 	# Repeat : inf until EV1_09
@@ -270,7 +279,7 @@ func createStateChart():
 	# 22: EVE1_09
 	# Dep : EVE0_01, EVE1_06
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([2,19])
 	taskActionPointer.push_back(funcref(self, "triggerMinigame"))
 	# 23: EVE1_11
@@ -282,7 +291,7 @@ func createStateChart():
 	# 24: EVP1_01
 	# Dep : EVE0_01, EVE1_09
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([2,22])
 	taskActionPointer.push_back(funcref(self, "triggerItemInventory"))
 	# 25: EVP1_02
@@ -312,7 +321,7 @@ func createStateChart():
 	# 29: EVA2_01
 	# Dep : EVE0_01
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([2])
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 30: EVA0_01
@@ -332,7 +341,7 @@ func createStateChart():
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
 	taskInheritance.push_back([12,29])
-	taskActionPointer.push_back(funcref(self, "triggerMinigame"))
+	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 33: EVA2_04
 	# Dep : EVE0_01, EVA2_01, EVA2_03
 	# Repeat : inf
@@ -362,11 +371,11 @@ func createStateChart():
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
 	taskInheritance.push_back([12,29])
-	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
+	taskActionPointer.push_back(funcref(self, "triggerMinigame"))
 	# 38: EVA2_09
 	# Dep : EVE0_01, EVA2_01, EVA2_08
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([12,29,37])
 	taskActionPointer.push_back(funcref(self, "triggerCinematic"))
 	
@@ -391,7 +400,7 @@ func action(actionNumber: int):
 		if not taskStatus[task][0]:
 			return false
 	if taskStatus[actionNumber][1] != -1:
-		if taskStatus[actionNumber][0] == true and taskStatus[actionNumber][1]==1:
+		if taskStatus[actionNumber][0] == true and taskStatus[actionNumber][1]==-2:
 			return false
 		elif taskStatus[taskStatus[actionNumber][1]][0] == true:
 			return false

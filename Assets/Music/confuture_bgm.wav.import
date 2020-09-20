@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/confuture_bgm.wav-ea4253eb1b1a717fa5dbe495f15c7913.sample"
+
+[deps]
+
+source_file="res://Assets/Music/confuture_bgm.wav"
+dest_files=[ "res://.import/confuture_bgm.wav-ea4253eb1b1a717fa5dbe495f15c7913.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0
