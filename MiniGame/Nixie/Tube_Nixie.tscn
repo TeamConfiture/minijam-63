@@ -4,108 +4,106 @@
 [ext_resource path="res://MiniGame/Nixie/tube_nixie_0-7.png" type="Texture" id=2]
 [ext_resource path="res://MiniGame/Nixie/tube_nixie_8-9.png" type="Texture" id=3]
 
-
-
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=1]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 0, 0, 556, 834 )
 
-[sub_resource type="AtlasTexture" id=13]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 1112, 0, 556, 834 )
 
-[sub_resource type="AtlasTexture" id=14]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 0, 0, 1112, 1668 )
-
-[sub_resource type="AtlasTexture" id=15]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 0, 834, 556, 834 )
-
-[sub_resource type="AtlasTexture" id=16]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 556, 834, 556, 834 )
-
-[sub_resource type="AtlasTexture" id=17]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 1668, 0, 556, 834 )
-
-[sub_resource type="AtlasTexture" id=18]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 556, 0, 556, 834 )
-
-[sub_resource type="AtlasTexture" id=19]
-flags = 4
-atlas = ExtResource( 3 )
-region = Rect2( 1112, 0, 1112, 1668 )
-
-[sub_resource type="AtlasTexture" id=20]
-flags = 4
-atlas = ExtResource( 2 )
-region = Rect2( 1112, 834, 556, 834 )
-
-[sub_resource type="AtlasTexture" id=21]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 2 )
 region = Rect2( 1668, 834, 556, 834 )
 
+[sub_resource type="AtlasTexture" id=4]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 556, 834, 556, 834 )
+
+[sub_resource type="AtlasTexture" id=5]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 1112, 1668 )
+
+[sub_resource type="AtlasTexture" id=6]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 0, 834, 556, 834 )
+
+[sub_resource type="AtlasTexture" id=7]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1668, 0, 556, 834 )
+
+[sub_resource type="AtlasTexture" id=8]
+flags = 4
+atlas = ExtResource( 3 )
+region = Rect2( 1112, 0, 1112, 1668 )
+
+[sub_resource type="AtlasTexture" id=9]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 1112, 834, 556, 834 )
+
+[sub_resource type="AtlasTexture" id=10]
+flags = 4
+atlas = ExtResource( 2 )
+region = Rect2( 556, 0, 556, 834 )
+
 [sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 12 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "default",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 13 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "2",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 14 ) ],
+"frames": [ SubResource( 3 ) ],
 "loop": true,
-"name": "8",
+"name": "7",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 15 ) ],
-"loop": true,
-"name": "4",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 16 ) ],
+"frames": [ SubResource( 4 ) ],
 "loop": true,
 "name": "5",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 17 ) ],
+"frames": [ SubResource( 5 ) ],
+"loop": true,
+"name": "8",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 6 ) ],
+"loop": true,
+"name": "4",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 7 ) ],
 "loop": true,
 "name": "3",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 18 ) ],
-"loop": true,
-"name": "1",
-"speed": 5.0
-}, {
-"frames": [ SubResource( 19 ) ],
+"frames": [ SubResource( 8 ) ],
 "loop": true,
 "name": "9",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 20 ) ],
+"frames": [ SubResource( 9 ) ],
 "loop": true,
 "name": "6",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 21 ) ],
+"frames": [ SubResource( 10 ) ],
 "loop": true,
-"name": "7",
+"name": "1",
 "speed": 5.0
 } ]
 
