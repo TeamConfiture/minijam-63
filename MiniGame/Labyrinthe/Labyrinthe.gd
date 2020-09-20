@@ -117,14 +117,14 @@ func shuffle():
 	var rnd=0
 	var rndDir = false
 	for i in range(size):
-		# rnd = rng.randi_range(0,4)
-		rnd = rng.randi_range(0,0)
+		rnd = rng.randi_range(0,4)
+#		rnd = rng.randi_range(0,0)
 		for j in range(rnd):
 			rndDir = (rng.randi_range(0,4) % 2 == 1)
 			_on_Bouton_laby_triggered(true, rndDir, false, i, 0)
 	for i in range(size):
-		# rnd = rng.randi_range(0,4)
-		rnd = rng.randi_range(0,1)
+		rnd = rng.randi_range(0,4)
+#		rnd = rng.randi_range(0,1)
 		for j in range(rnd):
 			rndDir = (rng.randi_range(0,4) % 2 == 1)
 			_on_Bouton_laby_triggered(rndDir, true, false, 0, i)
