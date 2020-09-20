@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Office.png-7c3a22703af2d0554743ec576c738457.stex"
+path="res://.import/office.png-3760439bee58ef691196100aa64a3561.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Screens/Office/Office.png"
-dest_files=[ "res://.import/Office.png-7c3a22703af2d0554743ec576c738457.stex" ]
+source_file="res://Screens/Office/office.png"
+dest_files=[ "res://.import/office.png-3760439bee58ef691196100aa64a3561.stex" ]
 
 [params]
 
