@@ -32,17 +32,17 @@ func triggerDialogue(actionId: int):
 		0:
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B0_01.json"
 		2:
-			print("Dialogue for 2")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E0_01.json"
 		6:
-			print("Dialogue for 6")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_01.json"
 		7:
-			print("Dialogue for 7")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_02.json"
 		8:
-			print("Dialogue for 8")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_03.json"
 		9:
-			print("Dialogue for 9")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_04.json"
 		10:
-			print("Dialogue for 10")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_05.json"
 		12:
 			print("Dialogue for 12")
 		13:
