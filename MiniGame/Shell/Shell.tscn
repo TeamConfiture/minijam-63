@@ -16,12 +16,6 @@
 size = 32
 font_data = ExtResource( 1 )
 
-[sub_resource type="StyleBoxEmpty" id=5]
-
-[sub_resource type="StyleBoxEmpty" id=6]
-
-[sub_resource type="StyleBoxEmpty" id=7]
-
 [sub_resource type="StyleBoxFlat" id=8]
 bg_color = Color( 0.0901961, 0.0980392, 0.105882, 1 )
 
@@ -29,11 +23,19 @@ bg_color = Color( 0.0901961, 0.0980392, 0.105882, 1 )
 size = 20
 font_data = ExtResource( 1 )
 
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="StyleBoxEmpty" id=7]
+
 [node name="Console" type="MarginContainer"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+margin_left = -0.396851
+margin_right = -0.396851
 custom_constants/margin_right = 80
-custom_constants/margin_top = 80
+custom_constants/margin_top = 240
 custom_constants/margin_left = 80
 custom_constants/margin_bottom = 80
 script = ExtResource( 2 )
@@ -43,7 +45,7 @@ __meta__ = {
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 margin_left = 80.0
-margin_top = 80.0
+margin_top = 240.0
 margin_right = 1840.0
 margin_bottom = 1000.0
 custom_constants/separation = 0
@@ -53,7 +55,7 @@ __meta__ = {
 
 [node name="Output" type="ColorRect" parent="VBoxContainer"]
 margin_right = 1760.0
-margin_bottom = 870.0
+margin_bottom = 710.0
 size_flags_vertical = 3
 color = Color( 0.0901961, 0.0980392, 0.105882, 1 )
 
@@ -84,40 +86,22 @@ __meta__ = {
 }
 
 [node name="Spacer" type="ColorRect" parent="VBoxContainer"]
-margin_top = 870.0
+margin_top = 710.0
 margin_right = 1760.0
-margin_bottom = 880.0
+margin_bottom = 720.0
 rect_min_size = Vector2( 0, 10 )
 color = Color( 0.137255, 0.521569, 0.192157, 1 )
 
 [node name="Input" type="ColorRect" parent="VBoxContainer"]
-margin_top = 880.0
+margin_top = 720.0
 margin_right = 1760.0
-margin_bottom = 920.0
+margin_bottom = 760.0
 rect_min_size = Vector2( 0, 40 )
 color = Color( 0.0901961, 0.0980392, 0.105882, 1 )
 
-[node name="LineEdit" type="LineEdit" parent="VBoxContainer/Input"]
-anchor_right = 1.0
-anchor_bottom = 1.075
-custom_styles/read_only = SubResource( 5 )
-custom_styles/focus = SubResource( 6 )
-custom_styles/normal = SubResource( 7 )
-custom_fonts/font = SubResource( 4 )
-custom_colors/font_color = Color( 0.447059, 0.796078, 0.145098, 1 )
-text = "> "
-max_length = 60
-context_menu_enabled = false
-selecting_enabled = false
-placeholder_alpha = 1.0
-caret_blink = true
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
 [node name="Control" type="Control" parent="."]
 margin_left = 80.0
-margin_top = 80.0
+margin_top = 240.0
 margin_right = 1840.0
 margin_bottom = 1000.0
 
@@ -145,6 +129,31 @@ stream = ExtResource( 5 )
 
 [node name="Correct" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 6 )
-[connection signal="text_changed" from="VBoxContainer/Input/LineEdit" to="." method="_on_LineEdit_text_changed"]
-[connection signal="text_entered" from="VBoxContainer/Input/LineEdit" to="." method="_on_LineEdit_text_entered"]
+
+[node name="Control2" type="Control" parent="."]
+margin_left = 80.0
+margin_top = 240.0
+margin_right = 1840.0
+margin_bottom = 1000.0
+
+[node name="LineEdit" type="LineEdit" parent="Control2"]
+margin_top = 720.0
+margin_right = 1760.0
+margin_bottom = 763.0
+custom_styles/read_only = SubResource( 5 )
+custom_styles/focus = SubResource( 6 )
+custom_styles/normal = SubResource( 7 )
+custom_fonts/font = SubResource( 4 )
+custom_colors/font_color = Color( 0.447059, 0.796078, 0.145098, 1 )
+text = "> "
+max_length = 60
+context_menu_enabled = false
+selecting_enabled = false
+placeholder_alpha = 1.0
+caret_blink = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
 [connection signal="pressed" from="Control/Button" to="." method="_on_Button_pressed"]
+[connection signal="text_changed" from="Control2/LineEdit" to="." method="_on_LineEdit_text_changed"]
+[connection signal="text_entered" from="Control2/LineEdit" to="." method="_on_LineEdit_text_entered"]
