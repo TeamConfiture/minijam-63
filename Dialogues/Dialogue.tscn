@@ -10,11 +10,11 @@
 size = 34
 font_data = ExtResource( 1 )
 
-[sub_resource type="DynamicFont" id=3]
+[sub_resource type="DynamicFont" id=2]
 size = 56
 font_data = ExtResource( 5 )
 
-[sub_resource type="DynamicFont" id=2]
+[sub_resource type="DynamicFont" id=3]
 size = 40
 font_data = ExtResource( 5 )
 
@@ -177,8 +177,8 @@ margin_left = 20.0
 margin_top = 20.0
 margin_right = 1740.0
 margin_bottom = 230.0
-custom_fonts/italics_font = SubResource( 3 )
-custom_fonts/normal_font = SubResource( 2 )
+custom_fonts/italics_font = SubResource( 2 )
+custom_fonts/normal_font = SubResource( 3 )
 custom_colors/default_color = Color( 0, 0, 0, 1 )
 bbcode_enabled = true
 visible_characters = 0
