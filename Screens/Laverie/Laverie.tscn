@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Screens/Laverie/Laverie.png" type="Texture" id=1]
 [ext_resource path="res://Screens/ScreenChanger.gd" type="Script" id=2]
+[ext_resource path="res://Global/ClickableNode.gd" type="Script" id=3]
 
-[node name="Hangar" type="Node2D"]
+[node name="Laverie" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
 scale = Vector2( 0.999708, 1.00018 )
@@ -16,4 +17,12 @@ script = ExtResource( 2 )
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="HangarDoor"]
 position = Vector2( -1051.45, -47.1674 )
 polygon = PoolVector2Array( 1995.47, 415.388, 2418.71, 414.306, 2417.77, 749.381, 1994.91, 749.381 )
+
+[node name="ClickableNode" type="Area2D" parent="."]
+script = ExtResource( 3 )
+myStepRight = 17
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickableNode"]
+polygon = PoolVector2Array( 1394.4, 255.411, 1596, 155.405, 1601.24, 871.709, 1400.75, 749.093 )
 [connection signal="input_event" from="HangarDoor" to="HangarDoor" method="_change_screen" binds= [ "Hangar" ]]
+[connection signal="input_event" from="ClickableNode" to="ClickableNode" method="onArea2Dinputevent"]
