@@ -80,6 +80,7 @@ func triggerDialogue(actionId: int):
 			print("Unrecognised event id : ", actionId)
 			return false
 	self.add_child(newDialogue)
+	newDialogue.start_dialogue()
 	
 func triggerChangeScreen(actionId: int):
 	print("We should trigger a scene change for task id ",actionId, " here !")
