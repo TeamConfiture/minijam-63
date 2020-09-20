@@ -1,11 +1,11 @@
-extends ColorRect
+extends MarginContainer
 
 export(String) var user_name = ""
 export(String) var broom_name = ""
 export(String) var manager_name = ""
 
-onready var input = $VBoxContainer/LineEdit
-onready var error_sound = $Error
+onready var input = $Cabinet/VBoxContainer/LineEdit
+onready var error_sound = $Cabinet/Error
 
 func _on_LineEdit_text_entered(new_text):
 	self.visible = false
