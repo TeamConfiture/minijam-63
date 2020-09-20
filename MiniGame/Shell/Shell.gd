@@ -3,12 +3,10 @@ extends MarginContainer
 export(String) var login_querry = "Enter your login: "
 export(String) var password_querry = "Enter your password: "
 
-export(String) var login_manager = "mini-jam-63"
-export(String) var password_manager = "confitureftw"
+export(String) var login_manager = "manager#007"
+export(String) var password_manager = "schrodinger"
 
-signal logged_in
-
-onready var line_edit = $VBoxContainer/Input/LineEdit
+onready var line_edit = $Control2/LineEdit
 onready var screen = $VBoxContainer/Output/TextEdit
 
 onready var startup_sound = $Startup
@@ -62,7 +60,10 @@ func check_user():
 func successful_login():
 	correct_sound.play()
 	screen.text += "--------------------------------------\nCongratulation! This is a sample text.\n--------------------------------------"
-	emit_signal("logged_in")
+	Inventory.changeVisibility(false)
+	Bgm.stop()
+	Global.goto_scene("res://Global/Outro.tscn")
+	
 
 func reset_login():
 	error_sound.play()
@@ -70,3 +71,7 @@ func reset_login():
 	screen.text += "\nYour system manager will be informed and you will be *fired*."
 	screen.text += "\nPlease try again\n\n"
 	screen.text += login_querry
+
+
+func _on_Button_pressed():
+	self.visible = false

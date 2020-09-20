@@ -122,6 +122,8 @@ script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
+user_name = "employee#42069"
+manager_name = "manager#007"
 
 [node name="Cabinet" type="ColorRect" parent="MarginContainer"]
 margin_left = 400.0
@@ -180,11 +182,11 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Error" type="AudioStreamPlayer" parent="MarginContainer/Cabinet"]
+[node name="Error" type="AudioStreamPlayer" parent="MarginContainer"]
 stream = ExtResource( 8 )
 [connection signal="input_event" from="HangarDoor" to="HangarDoor" method="_change_screen" binds= [ "Hangar" ]]
 [connection signal="pressed" from="MarginContainer/Cabinet/VBoxContainer/HBoxContainer/Button" to="MarginContainer/Cabinet" method="_on_Button_pressed"]
-[connection signal="text_entered" from="MarginContainer/Cabinet/VBoxContainer/LineEdit" to="MarginContainer/Cabinet" method="_on_LineEdit_text_entered"]
+[connection signal="text_entered" from="MarginContainer/Cabinet/VBoxContainer/LineEdit" to="MarginContainer" method="_on_LineEdit_text_entered"]
 
 [editable path="ClickableNodeCasier"]
 
