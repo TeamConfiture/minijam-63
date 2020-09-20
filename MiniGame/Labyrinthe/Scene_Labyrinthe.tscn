@@ -9,29 +9,23 @@
 size = 42
 font_data = ExtResource( 4 )
 
-[node name="ColorRect" type="ColorRect"]
-margin_right = 1920.0
-margin_bottom = 1080.0
-color = Color( 0.345098, 0.423529, 0.47451, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
 
-[node name="Bouton_laby" parent="Node2D" instance=ExtResource( 1 )]
+[node name="Bouton_laby" parent="." instance=ExtResource( 1 )]
 position = Vector2( 176.777, 890.955 )
+z_index = 1
 reset = true
 
-[node name="Labyrinthe" type="Node2D" parent="Node2D"]
+[node name="Labyrinthe" type="Node2D" parent="."]
 position = Vector2( 1036.88, 268.685 )
+z_index = 1
 script = ExtResource( 2 )
 originalTab = [ [ "I", "I", "I", "r", "r", "r", "I", "r", "r", "default", "r", "default", "I", "r", "I", "r", "r", "I", "r", "I", "I", "r", "I", "default", "r" ], [ 1, 1, 0, 2, 0, 0, 1, 1, 1, 0, 1, 0, 0, 3, 1, 3, 2, 0, 0, 1, 0, 1, 0, 0, 3 ] ]
 inputs = [ Vector2( 2, 0 ), Vector2( 4, 0 ), Vector2( 0, 4 ) ]
 outputs = [ Vector2( 4, 6 ), Vector2( 2, 6 ), Vector2( 6, 2 ) ]
 
-[node name="Label" type="Label" parent="Node2D"]
+[node name="Label" type="Label" parent="."]
 margin_left = 48.7353
 margin_top = 55.0921
 margin_right = 656.735
@@ -44,5 +38,14 @@ autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
 }
-[connection signal="triggered" from="Node2D/Bouton_laby" to="Node2D/Labyrinthe" method="_on_Bouton_laby_triggered"]
-[connection signal="end_minigame" from="Node2D/Labyrinthe" to="Node2D" method="_on_Labyrinthe_end_minigame"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+mouse_filter = 2
+color = Color( 0.345098, 0.423529, 0.47451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="triggered" from="Bouton_laby" to="Labyrinthe" method="_on_Bouton_laby_triggered"]
+[connection signal="end_minigame" from="Labyrinthe" to="." method="_on_Labyrinthe_end_minigame"]
