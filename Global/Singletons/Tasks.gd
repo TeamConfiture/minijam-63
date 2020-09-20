@@ -44,23 +44,25 @@ func triggerDialogue(actionId: int):
 		10:
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_05.json"
 		12:
-			print("Dialogue for 12")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_01.json"
 		13:
-			print("Dialogue for 13")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_02.json"
 		14:
-			print("Dialogue for 14")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_03.json"
 		15:
-			print("Dialogue for 15")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_04.json"
 		16:
-			print("Dialogue for 16")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_05.json"
 		17:
 			print("Dialogue for 17")
+		19:
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_06.json"
 		20:
-			print("Dialogue for 20")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_07.json"
 		21:
-			print("Dialogue for 21")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_08.json"
 		26:
-			print("Dialogue for 26")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_10.json"
 		29:
 			print("Dialogue for 29")
 		31:
@@ -249,7 +251,7 @@ func createStateChart():
 	# Repeat : once
 	taskStatus.push_back([false, 1])
 	taskInheritance.push_back([2])
-	taskActionPointer.push_back(funcref(self, "triggerItemInventory"))
+	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 20: EVE1_07
 	# Dep : EVE0_01
 	# Repeat : inf until EV1_09
