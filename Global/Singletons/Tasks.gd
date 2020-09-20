@@ -32,6 +32,8 @@ func _on_dialogue_E2A_end():
 	action(30)
 
 func _on_dialogue_A2_02_end():
+#	print("here")
+	print(get_tree().get_nodes_in_group("cabinet"))
 	get_tree().call_group("cabinet", "set_visible", true)
 
 func _on_dialogue_badge():
@@ -103,12 +105,11 @@ func triggerDialogue(actionId: int):
 			newDialogue.connect("end_dialogue", self, "_on_dialogue_E2A_end")
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_10.json"
 		29:
-#			newDialogue.connect("end_dialogue", self, "_on_dialogue_E2A_endV")
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_01.json"
 		31:
-			newDialogue.connect("end_dialogue", self, "_on_dialogue_A2_02_end")
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_02.json"
 		32:
+			newDialogue.connect("end_dialogue", self, "_on_dialogue_A2_02_end")
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_03.json"
 		33:
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_04.json"
