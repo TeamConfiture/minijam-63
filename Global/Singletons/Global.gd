@@ -17,7 +17,7 @@ func goto_scene(path):
 	# The solution is to defer the load to a later time, when
 	# we can be sure that no code from the current scene is running:
 
-	Inventory.visible=true
+#	Inventory.visible=true
 	call_deferred("_deferred_goto_scene", path)
 
 
@@ -37,5 +37,5 @@ func _deferred_goto_scene(path):
 	# Optionally, to make it compatible with the SceneTree.change_scene() API.
 	get_tree().set_current_scene(current_scene)
 	
-	Tasks.action(0)
+#	Tasks.action(0)
 
