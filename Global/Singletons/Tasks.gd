@@ -38,6 +38,10 @@ func _on_laby_end():
 	print("_on_laby_end")
 	triggerItemInventory(19)
 
+func lockpicking_end():
+	print("lockpicking_end")
+#	triggerChangeScreen(19)
+
 func dummyAction(actionId: int):
 	print("Dummy action ", actionId, "was called !")
 
@@ -108,6 +112,8 @@ func triggerDialogue(actionId: int):
 func triggerChangeScreen(actionId: int):
 	print("We should trigger a scene change for task id ",actionId, " here !")
 	match actionId:
+		19:
+			Global.goto_scene("res://Screens/Placard/Placard.tscn")
 		_:
 			print("Unrecognised event id : ", actionId)
 	# Global.goto_scene("res://Screens/" + scene_name + "/" + scene_name + ".tscn")
@@ -123,6 +129,7 @@ func triggerMinigame(actionId: int):
 		22:
 			print("Item handling for 22")
 			sceneInstance = miniGameLockpick.instance()
+			sceneInstance.connect("lockpicking_end", self, "_on_locky_end")
 		37:
 			print("Item handling for 37")
 			sceneInstance = miniGameShell.instance()

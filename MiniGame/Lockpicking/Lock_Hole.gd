@@ -1,5 +1,7 @@
 extends Area2D
 
+signal success()
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -42,8 +44,9 @@ func _process(delta):
 		if timer < 0:
 			if phase == phase_timer.size() - 1:
 				picked = true
-				print_debug ("success!");
-				reset()
+				
+				emit_signal("success")
+				
 			else:
 				phase += 1
 				timer = phase_timer[phase]
