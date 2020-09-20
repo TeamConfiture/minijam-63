@@ -1,6 +1,6 @@
 extends Node
 
-var current_scene = null
+#var current_scene = null
 
 export var taskStatus = [1] # tab de bool
 export var taskInheritance = [2] # liste de liste d'int
