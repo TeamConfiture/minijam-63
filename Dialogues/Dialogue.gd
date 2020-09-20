@@ -84,7 +84,7 @@ func read_json(path):
 
 
 func set_new_line():
-	main_text.text = current_line["line"]
+	main_text.bbcode_text = current_line["line"]
 	
 	match current_line["side"]:
 		"left":
