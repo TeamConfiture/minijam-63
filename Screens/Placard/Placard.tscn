@@ -4,10 +4,10 @@
 [ext_resource path="res://Screens/ScreenChanger.gd" type="Script" id=2]
 [ext_resource path="res://Screens/BackArrow.png" type="Texture" id=3]
 [ext_resource path="res://Global/PickableItem.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Sprites/pass.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/pass_broom.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 50.4593, 70.7124 )
+extents = Vector2( 56.8436, 33.3445 )
 
 [node name="Hangar" type="Node2D"]
 
@@ -39,6 +39,7 @@ my_step_left = 24
 [node name="Sprite" type="Sprite" parent="PickableItem"]
 position = Vector2( 1678.3, 555.59 )
 rotation = -1.39626
+scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PickableItem"]
