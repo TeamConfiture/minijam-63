@@ -246,7 +246,7 @@ func createStateChart():
 	# Dep : EVE0_01
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
-	taskInheritance.push_back([2])
+	taskInheritance.push_back([]) #removed 2
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 10: EVB1_05
 	# Dep : EVE0_01
@@ -322,8 +322,8 @@ func createStateChart():
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 22: EVE1_09
 	# Dep : EVE0_01, EVE1_06
-	# Repeat : once
-	taskStatus.push_back([false, -2])
+	# Repeat : once -> inf
+	taskStatus.push_back([false, -1])
 	taskInheritance.push_back([2,19])
 	taskActionPointer.push_back(funcref(self, "triggerMinigame"))
 	# 23: EVE1_11
@@ -378,49 +378,49 @@ func createStateChart():
 	# Dep : EVE0_01, EVA2_01
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
-	taskInheritance.push_back([12,29])
+	taskInheritance.push_back([29]) # 12
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 32: EVA2_03
 	# Dep : EVE0_01, EVA2_01
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
-	taskInheritance.push_back([12,29])
+	taskInheritance.push_back([29]) # 12
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 33: EVA2_04
 	# Dep : EVE0_01, EVA2_01, EVA2_03
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
-	taskInheritance.push_back([12,29,32])
+	taskInheritance.push_back([29,32]) # 12
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 34: EVA2_05
 	# Dep : EVE0_01, EVA2_01, EVA2_03
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
-	taskInheritance.push_back([12,29,32])
+	taskInheritance.push_back([29,32]) # 12
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 35: EVA2_06
 	# Dep : EVE0_01, EVA2_01, EVA2_03
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
-	taskInheritance.push_back([12,29,32])
+	taskInheritance.push_back([29,32]) # 12
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 36: EVA2_07
 	# Dep : EVE0_01, EVA2_01
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
-	taskInheritance.push_back([12,29])
+	taskInheritance.push_back([29]) # 12
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 37: EVA2_08
 	# Dep : EVE0_01, EVA2_01
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
-	taskInheritance.push_back([12,29])
+	taskInheritance.push_back([29]) # 12
 	taskActionPointer.push_back(funcref(self, "triggerMinigame"))
 	# 38: EVA2_09
 	# Dep : EVE0_01, EVA2_01, EVA2_08
 	# Repeat : once
 	taskStatus.push_back([false, -2])
-	taskInheritance.push_back([12,29,37])
+	taskInheritance.push_back([29,37]) # 12
 	taskActionPointer.push_back(funcref(self, "triggerCinematic"))
 	
 #	for i in range(3):
