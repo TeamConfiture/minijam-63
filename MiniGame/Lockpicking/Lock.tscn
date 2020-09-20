@@ -1,23 +1,31 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://Assets/Sprites/lock-hole.png" type="Texture" id=1]
 [ext_resource path="res://MiniGame/Lockpicking/Lock.gd" type="Script" id=2]
+[ext_resource path="res://Assets/Sprites/lock_background.png" type="Texture" id=3]
+[ext_resource path="res://MiniGame/Lockpicking/Lock_Hole.gd" type="Script" id=4]
+[ext_resource path="res://MiniGame/Lockpicking/Lockpicking.gd" type="Script" id=5]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 47.7582
+radius = 56.4007
 
-[node name="Area2D" type="Area2D"]
-position = Vector2( 60.6337, 41.5355 )
+[node name="Lockpicking" type="Node2D"]
+script = ExtResource( 5 )
+
+[node name="Lock" type="Sprite" parent="."]
 scale = Vector2( 1.2, 1.2 )
+texture = ExtResource( 3 )
 script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource( 1 )
+[node name="LockHole" type="Area2D" parent="."]
+position = Vector2( -6.09439, 110.484 )
+scale = Vector2( 0.95, 0.95 )
+script = ExtResource( 4 )
 
-[node name="Sprite" type="Sprite" parent="."]
+[node name="Hole" type="Sprite" parent="LockHole"]
 texture = ExtResource( 1 )
-[connection signal="mouse_entered" from="." to="." method="_on_Area2D_mouse_entered"]
-[connection signal="mouse_exited" from="." to="." method="_on_Area2D_mouse_exited"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LockHole"]
+shape = SubResource( 1 )
+[connection signal="mouse_entered" from="LockHole" to="LockHole" method="_on_Area2D_mouse_entered"]
+[connection signal="mouse_exited" from="LockHole" to="LockHole" method="_on_Area2D_mouse_exited"]
