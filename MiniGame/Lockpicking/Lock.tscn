@@ -13,10 +13,23 @@ radius = 56.4007
 script = ExtResource( 5 )
 
 [node name="ColorRect" type="ColorRect" parent="."]
-margin_right = 1920.0
-margin_bottom = 1080.0
+margin_left = -3.77551
+margin_top = 7.55099
+margin_right = 1916.22
+margin_bottom = 1087.55
 mouse_filter = 2
 color = Color( 0.345098, 0.423529, 0.47451, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label" type="Label" parent="."]
+margin_left = 50.0
+margin_top = 540.0
+margin_right = 292.0
+margin_bottom = 618.0
+text = "Click on the hole and follow it 
+with your mouse until the lock opens!"
 __meta__ = {
 "_edit_use_anchors_": false
 }
