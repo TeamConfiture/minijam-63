@@ -34,6 +34,10 @@ func _on_dialogue_E2A_end():
 func _on_dialogue_A2_02_end():
 	get_tree().call_group("cabinet", "set_visible", true)
 
+func _on_dialogue_badge():
+	print("_on_dialogue_badge")
+	triggerItemInventory(27)
+
 func _on_dialogue_JanitorCle_end():
 	print("_on_dialogue_JanitorCle_end")
 	triggerItemInventory(21)
@@ -63,6 +67,7 @@ func triggerDialogue(actionId: int):
 		2:
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E0_01.json"
 		6:
+			newDialogue.connect("end_dialogue", self, "_on_dialogue_badge")
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_01.json"
 		7:
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B1_02.json"
@@ -175,6 +180,7 @@ func triggerItemInventory(actionId: int):
 			Inventory._on_add_inventory_item("PassBroom")
 		27:
 			print("Item handling for 27")
+			Inventory._on_add_inventory_item("PassPlayer")
 		28:
 			print("Item handling for 28")
 		_:
@@ -218,10 +224,11 @@ func createStateChart():
 	taskInheritance.push_back([2])
 	taskActionPointer.push_back(funcref(self, "triggerChangeScreen"))
 	# 6: EVB1_01
-	# Dep : EVE0_01
+	# Dep : EVE0_01 => none
 	# Repeat : once
 	taskStatus.push_back([false, -2])
-	taskInheritance.push_back([2])
+	#taskInheritance.push_back([2])
+	taskInheritance.push_back([])
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 7: EVB1_02
 	# Dep : EVE0_01
