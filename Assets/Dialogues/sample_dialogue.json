@@ -1,6 +1,8 @@
 {
-	"nameLeft": "Name1",
-	"nameRight": "Name2",
+	"nameLeft": "Charlie",
+	"nameRight": "Lapignon",
+	"imageLeft": "res://Assets/Cursors/Charlie.png",
+	"imageRight": "res://Assets/Cursors/Lapignon.png",
 	"lines": [
 		{
 			"side": "left",
