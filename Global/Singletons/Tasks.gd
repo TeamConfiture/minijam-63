@@ -22,6 +22,9 @@ var miniGameLaby =  preload("res://MiniGame/Labyrinthe/Scene_Labyrinthe.tscn")
 var miniGameLockpick =  preload("res://MiniGame/Lockpicking/Lock.tscn")
 var miniGameShell =  preload("res://MiniGame/Shell/Shell.tscn")
 
+func _on_dialogue_E2A_end():
+	action(29)
+
 func dummyAction(actionId: int):
 	print("Dummy action ", actionId, "was called !")
 
@@ -61,7 +64,8 @@ func triggerDialogue(actionId: int):
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_07.json"
 		21:
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_08.json"
-		26:
+		26: # Transition Entrepot -> Archive
+			newDialogue.connect("end_dialogue", self, "_on_dialogue_E2A_end")
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_10.json"
 		29:
 			print("Dialogue for 29")

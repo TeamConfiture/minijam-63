@@ -20,7 +20,7 @@ var line = 0
 var current_line
 var n_displayed_char = 0.0
 
-var start_dialogue = false
+var dialogueStarted = false
 
 var rng = RandomNumberGenerator.new()
 
@@ -30,7 +30,7 @@ func _ready():
 	main_text.visible_characters = 0
 
 func _process(delta):
-	if start_dialogue:
+	if dialogueStarted:
 		n_displayed_char += delta * dialogue_speed
 		main_text.visible_characters = int(n_displayed_char)
 		if n_displayed_char > current_line["line"].length():
@@ -63,7 +63,7 @@ func start_dialogue():
 	lines = results["lines"]
 	
 	current_line = lines[line]
-	start_dialogue = true
+	dialogueStarted = true
 	self.visible = true
 	set_new_line()
 

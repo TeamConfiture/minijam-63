@@ -11,7 +11,7 @@ signal clicked();
 func _ready():
 	pass
 
-func onArea2Dinputevent( viewport, event, shapeidx ):
+func onArea2Dinputevent(_viewport, event, _shapeidx):
 	if (event is InputEventMouseButton and event.pressed and event.button_index == BUTTON_LEFT):
 		# var scene = get_node(".");
 #		print("Zone Triggered")
