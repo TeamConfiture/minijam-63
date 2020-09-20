@@ -17,7 +17,7 @@ func _ready():
 	pass
 
 func getPressed():
-	print("getPressed")
+#	print("getPressed")
 	emit_signal("triggered", maDirection, monSens, reset, line, col)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

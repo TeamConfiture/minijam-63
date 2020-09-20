@@ -15,8 +15,8 @@ var outNodes = []
 
 var rng = RandomNumberGenerator.new()
 
-var labyTileTemplate =  preload("res://Tests/LabyrintheTile.tscn")
-var labyButtonTemplate =  preload("res://Tests/Bouton_laby.tscn")
+var labyTileTemplate =  preload("res://MiniGame/Labyrinthe/LabyrintheTile.tscn")
+var labyButtonTemplate =  preload("res://MiniGame/Labyrinthe/Bouton_laby.tscn")
 
 func generateLab():
 	status.clear()

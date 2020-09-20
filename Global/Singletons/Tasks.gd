@@ -16,16 +16,70 @@ var taskActionPointer = [] # tab de pointeurs de fonction
 # taskInheritance : List[taskNb] of List[variableSize] of taskNbs
 # taskActionPointer : List[taskNb] of function pointer
 #  |-> Which function to call when action is triggered
-	
+
+var dialogueTemplate =  preload("res://Dialogues/Dialogue.tscn")
+var miniGameLaby =  preload("res://MiniGame/Labyrinthe/Scene_Labyrinthe.tscn")
+var miniGameLockpick =  preload("res://MiniGame/Lockpicking/Lock.tscn")
+var miniGameShell =  preload("res://MiniGame/Shell/Shell.tscn")
 
 func dummyAction(actionId: int):
 	print("Dummy action ", actionId, "was called !")
 
 func triggerDialogue(actionId: int):
+	var newDialogue = dialogueTemplate.instance()
 	print("We should trigger a dialogue for task id ",actionId, " here !")
 	match actionId:
+		0:
+			#newDialogue.dialogue_file = "Truc"
+			print("Dialogue for 0")
+		2:
+			print("Dialogue for 2")
+		6:
+			print("Dialogue for 6")
+		7:
+			print("Dialogue for 7")
+		8:
+			print("Dialogue for 8")
+		9:
+			print("Dialogue for 9")
+		10:
+			print("Dialogue for 10")
+		12:
+			print("Dialogue for 12")
+		13:
+			print("Dialogue for 13")
+		14:
+			print("Dialogue for 14")
+		15:
+			print("Dialogue for 15")
+		16:
+			print("Dialogue for 16")
+		17:
+			print("Dialogue for 17")
+		20:
+			print("Dialogue for 20")
+		21:
+			print("Dialogue for 21")
+		26:
+			print("Dialogue for 26")
+		29:
+			print("Dialogue for 29")
+		31:
+			print("Dialogue for 31")
+		33:
+			print("Dialogue for 33")
+		34:
+			print("Dialogue for 34")
+		35:
+			print("Dialogue for 35")
+		36:
+			print("Dialogue for 36")
+		37:
+			print("Dialogue for 37")
 		_:
 			print("Unrecognised event id : ", actionId)
+			return false
+	self.add_child(newDialogue)
 	
 func triggerChangeScreen(actionId: int):
 	print("We should trigger a scene change for task id ",actionId, " here !")
@@ -36,19 +90,42 @@ func triggerChangeScreen(actionId: int):
 
 func triggerMinigame(actionId: int):
 	print("We should trigger a minigame for task id ",actionId, " here !")
+	var sceneInstance = null
 	match actionId:
+		18:
+			print("Item handling for 18")
+			sceneInstance = miniGameLaby.instance()
+		22:
+			print("Item handling for 22")
+			sceneInstance = miniGameLockpick.instance()
+		32:
+			print("Item handling for 32")
+			sceneInstance = miniGameShell.instance()
 		_:
 			print("Unrecognised event id : ", actionId)
+	self.add_child(sceneInstance)
 
 func triggerCinematic(actionId: int):
 	print("We should trigger a cinematic for task id ",actionId, " here !")
 	match actionId:
+		11:
+			print("Starting cinematic for 11")
+		38:
+			print("Starting cinematic for 38")
 		_:
 			print("Unrecognised event id : ", actionId)
 
 func triggerItemInventory(actionId: int):
 	print("We should handle an item event for task id ",actionId, " here !")
 	match actionId:
+		19:
+			print("Item handling for 19")
+		24:
+			print("Item handling for 24")
+		27:
+			print("Item handling for 27")
+		28:
+			print("Item handling for 28")
 		_:
 			print("Unrecognised event id : ", actionId)
 
