@@ -37,7 +37,6 @@ func triggerItemInventory(actionId: int):
 	print("We should handle an item event for task id ",actionId, " here !")
 
 func createStateChart():
-		
 	# 0: EVB0_01
 	# Dep : none
 	# Repeat : once
