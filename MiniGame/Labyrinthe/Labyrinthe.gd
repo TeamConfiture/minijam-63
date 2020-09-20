@@ -28,7 +28,7 @@ func generateLab():
 	status.append([0,0,0,0,0])
 	status.append([0,0,0,0,0])
 	var temp = 0
-	var test = ["default", "i", "T", "I", "r"]
+#	var test = ["default", "i", "T", "I", "r"]
 	var inImgs = ["res://Docs/PH_InputB.png", "res://Docs/PH_InputR.png", "res://Docs/PH_InputV.png"]
 	var outImgs = ["res://Docs/PH_OutputB.png", "res://Docs/PH_OutputR.png", "res://Docs/PH_OutputV.png"]
 	var theIndex = null
@@ -123,7 +123,7 @@ func shuffle():
 			continue
 		rnd = rng.randi_range(0,2)
 #		rnd = rng.randi_range(0,0)
-		for j in range(rnd):
+		for _j in range(rnd):
 			rndDir = (rng.randi_range(0,3) % 2 == 1)
 			_on_Bouton_laby_triggered(true, rndDir, false, i, 0)
 	for i in range(size):
@@ -131,7 +131,7 @@ func shuffle():
 			continue
 		rnd = rng.randi_range(0,2)
 #		rnd = rng.randi_range(0,1)
-		for j in range(rnd):
+		for _j in range(rnd):
 			rndDir = (rng.randi_range(0,3) % 2 == 1)
 			_on_Bouton_laby_triggered(rndDir, true, false, 0, i)
 
