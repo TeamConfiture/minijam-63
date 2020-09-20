@@ -1,0 +1,12 @@
+{
+	"nameLeft": "MC",
+	"nameRight": "",
+	"imageLeft": "res://Assets/Sprites/MC_thinking.png",
+	"imageRight": "",
+	"lines": [
+		{
+			"side": "left",
+			"line": "I’ll have more information if I find my employee file. It should be in the archives."
+		}
+	]
+}

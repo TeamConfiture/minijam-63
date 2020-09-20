@@ -51,6 +51,7 @@ func _process(delta):
 			set_new_line()
 
 func start_dialogue():
+	print(dialogue_file)
 	var results = read_json(dialogue_file)
 	
 	name_left.text = results["nameLeft"]

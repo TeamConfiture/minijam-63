@@ -30,8 +30,7 @@ func triggerDialogue(actionId: int):
 	print("We should trigger a dialogue for task id ",actionId, " here !")
 	match actionId:
 		0:
-			#newDialogue.dialogue_file = "Truc"
-			print("Dialogue for 0")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Office/B0_01.json"
 		2:
 			print("Dialogue for 2")
 		6:
@@ -79,7 +78,7 @@ func triggerDialogue(actionId: int):
 		_:
 			print("Unrecognised event id : ", actionId)
 			return false
-	self.add_child(newDialogue)
+	get_tree().get_root().add_child(newDialogue)
 	newDialogue.start_dialogue()
 	
 func triggerChangeScreen(actionId: int):
