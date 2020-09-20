@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Dialogues/Dialogue.gd" type="Script" id=2]
 [ext_resource path="res://Assets/SoundEffects/Dialogues/keyboard_sound.wav" type="AudioStream" id=3]
+[ext_resource path="res://Tests/carre_presque_noir_400.png" type="Texture" id=4]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -14,9 +15,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 margin_left = -960.0
-margin_top = -210.0
+margin_top = -370.0
 margin_right = 960.0
-margin_bottom = 210.0
+margin_bottom = 370.0
 custom_constants/separation = 0
 script = ExtResource( 2 )
 __meta__ = {
@@ -25,28 +26,35 @@ __meta__ = {
 
 [node name="NamesMargin" type="MarginContainer" parent="."]
 margin_right = 1920.0
-margin_bottom = 80.0
+margin_bottom = 400.0
 custom_constants/margin_right = 80
 custom_constants/margin_left = 80
 
 [node name="Names" type="HBoxContainer" parent="NamesMargin"]
 margin_left = 80.0
 margin_right = 1840.0
-margin_bottom = 80.0
+margin_bottom = 400.0
+custom_constants/separation = 20
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NameLeft" type="ColorRect" parent="NamesMargin/Names"]
+[node name="VBoxContainer" type="VBoxContainer" parent="NamesMargin/Names"]
 margin_right = 200.0
-margin_bottom = 80.0
+margin_bottom = 400.0
+alignment = 2
+
+[node name="NameLeft" type="ColorRect" parent="NamesMargin/Names/VBoxContainer"]
+margin_top = 320.0
+margin_right = 200.0
+margin_bottom = 400.0
 rect_min_size = Vector2( 200, 80 )
 color = Color( 0.164706, 0.215686, 0.278431, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="TextLeft" type="Label" parent="NamesMargin/Names/NameLeft"]
+[node name="TextLeft" type="Label" parent="NamesMargin/Names/VBoxContainer/NameLeft"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 1 )
@@ -57,25 +65,62 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="HorizontalSpacer" type="ReferenceRect" parent="NamesMargin/Names"]
-margin_left = 204.0
-margin_right = 1556.0
-margin_bottom = 80.0
-rect_min_size = Vector2( 0, 80 )
-size_flags_horizontal = 3
-border_color = Color( 0, 0, 0, 0 )
+[node name="IL" type="Control" parent="NamesMargin/Names"]
+margin_left = 220.0
+margin_right = 620.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 400, 400 )
+
+[node name="ImageLeft" type="TextureRect" parent="NamesMargin/Names/IL"]
+margin_right = 800.0
+margin_bottom = 800.0
+rect_min_size = Vector2( 400, 400 )
+rect_scale = Vector2( 0.5, 0.5 )
+texture = ExtResource( 4 )
+stretch_mode = 6
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="NameRight" type="ColorRect" parent="NamesMargin/Names"]
+[node name="Spacer" type="Control" parent="NamesMargin/Names"]
+margin_left = 640.0
+margin_right = 1120.0
+margin_bottom = 400.0
+size_flags_horizontal = 3
+
+[node name="IR" type="Control" parent="NamesMargin/Names"]
+margin_left = 1140.0
+margin_right = 1540.0
+margin_bottom = 400.0
+rect_min_size = Vector2( 400, 400 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ImageRight" type="TextureRect" parent="NamesMargin/Names/IR"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+rect_min_size = Vector2( 400, 400 )
+texture = ExtResource( 4 )
+stretch_mode = 6
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="NamesMargin/Names"]
 margin_left = 1560.0
 margin_right = 1760.0
-margin_bottom = 80.0
+margin_bottom = 400.0
+alignment = 2
+
+[node name="NameRight" type="ColorRect" parent="NamesMargin/Names/VBoxContainer2"]
+margin_top = 320.0
+margin_right = 200.0
+margin_bottom = 400.0
 rect_min_size = Vector2( 200, 80 )
 color = Color( 0.164706, 0.215686, 0.278431, 1 )
 
-[node name="TextRight" type="Label" parent="NamesMargin/Names/NameRight"]
+[node name="TextRight" type="Label" parent="NamesMargin/Names/VBoxContainer2/NameRight"]
 anchor_right = 1.0
 anchor_bottom = 1.0
 custom_fonts/font = SubResource( 1 )
@@ -88,9 +133,9 @@ __meta__ = {
 }
 
 [node name="TextMargin" type="MarginContainer" parent="."]
-margin_top = 80.0
+margin_top = 400.0
 margin_right = 1920.0
-margin_bottom = 420.0
+margin_bottom = 740.0
 rect_min_size = Vector2( 1640, 340 )
 custom_constants/margin_right = 80
 custom_constants/margin_top = 10
