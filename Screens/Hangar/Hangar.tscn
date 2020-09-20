@@ -55,8 +55,8 @@ myStepRight = 14
 myStepItem = {
 "Item4": -1,
 "Item5": -1,
-"PassBalayeur": -1,
-"PassHeros": 13,
+"PassBalayeur": 13,
+"PassHeros": -1,
 "TenueBalayeur": -1,
 "none": 12
 }

@@ -19,6 +19,8 @@ func onArea2Dinputevent(_viewport, event, _shapeidx):
 				if (myStepItem[oldItem] >= 0): # Si il y a une action associée à cet item
 					Tasks.action(myStepItem[oldItem]) # On applique l'action
 				return # Quoi qu'il arrive, il n'y a rien d'autre de possible
+			else:
+				print("unhandled item called ", Inventory.current_item)
 		if (event.button_index == BUTTON_RIGHT): # Clic droit
 			if (myStepRight >= 0): # S'il y a une action associée
 				Tasks.action(myStepRight); # On applique l'action du clic droit
