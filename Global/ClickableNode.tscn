@@ -2,12 +2,10 @@
 
 [ext_resource path="res://Global/ClickableNode.gd" type="Script" id=1]
 
-
 [sub_resource type="CircleShape2D" id=1]
 radius = 32.1403
 
 [node name="ClickableNode" type="Area2D"]
-position = Vector2( 773, 329 )
 script = ExtResource( 1 )
 myStep = 1
 
