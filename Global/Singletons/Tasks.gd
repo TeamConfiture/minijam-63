@@ -38,9 +38,10 @@ func _on_laby_end():
 	print("_on_laby_end")
 	triggerItemInventory(19)
 
-func lockpicking_end():
+func _on_locky_end():
 	print("lockpicking_end")
 #	triggerChangeScreen(19)
+	action(23)
 
 func dummyAction(actionId: int):
 	print("Dummy action ", actionId, "was called !")
@@ -112,7 +113,7 @@ func triggerDialogue(actionId: int):
 func triggerChangeScreen(actionId: int):
 	print("We should trigger a scene change for task id ",actionId, " here !")
 	match actionId:
-		19:
+		23:
 			Global.goto_scene("res://Screens/Placard/Placard.tscn")
 		_:
 			print("Unrecognised event id : ", actionId)
@@ -159,6 +160,7 @@ func triggerItemInventory(actionId: int):
 			Inventory._on_add_inventory_item("ClefPlacard")
 		24:
 			print("Item handling for 24")
+			Inventory._on_add_inventory_item("PassBalayeur")
 		27:
 			print("Item handling for 27")
 		28:
