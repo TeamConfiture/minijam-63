@@ -13,7 +13,6 @@ extents = Vector2( 56.8436, 33.3445 )
 
 [node name="Background" type="Sprite" parent="."]
 position = Vector2( 3.70813, 1.05948 )
-scale = Vector2( 1.15088, 0.487663 )
 texture = ExtResource( 1 )
 centered = false
 __meta__ = {
@@ -33,18 +32,19 @@ position = Vector2( -948.861, 437.189 )
 polygon = PoolVector2Array( 1717.22, 534.21, 2024.41, 533.568, 1870.26, 649.833 )
 
 [node name="PassBroom" type="Area2D" parent="."]
+position = Vector2( 1313.28, 639.803 )
 script = ExtResource( 4 )
 my_step_left = 24
 
 [node name="Sprite" type="Sprite" parent="PassBroom"]
-position = Vector2( 1678.3, 555.59 )
-rotation = -1.39626
+position = Vector2( 95.8389, 18.8633 )
+rotation = 0.340835
 scale = Vector2( 0.05, 0.05 )
 texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PassBroom"]
-position = Vector2( 1677.79, 553.977 )
-rotation = -1.39626
+position = Vector2( 95.3291, 17.2506 )
+rotation = 0.340835
 shape = SubResource( 1 )
 [connection signal="input_event" from="HangarDoor" to="HangarDoor" method="_change_screen" binds= [ "Hangar" ]]
 [connection signal="input_event" from="PassBroom" to="PassBroom" method="_on_PickableItem_input_event"]
