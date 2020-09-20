@@ -22,13 +22,14 @@ var miniGameLaby =  preload("res://MiniGame/Labyrinthe/Scene_Labyrinthe.tscn")
 var miniGameLockpick =  preload("res://MiniGame/Lockpicking/Lock.tscn")
 var miniGameShell =  preload("res://MiniGame/Shell/Shell.tscn")
 
-func _on_dialogue_E2A_endV():
-	print("_on_dialogue_E2A_endV")
-	action(30)
+#func _on_dialogue_E2A_endV():
+#	print("_on_dialogue_E2A_endV")
+#	action(30)
 
 func _on_dialogue_E2A_end():
 	print("_on_dialogue_E2A_end")
 	action(29)
+	action(30)
 
 func _on_dialogue_JanitorCle_end():
 	print("_on_dialogue_JanitorCle_end")
@@ -94,7 +95,7 @@ func triggerDialogue(actionId: int):
 			newDialogue.connect("end_dialogue", self, "_on_dialogue_E2A_end")
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_10.json"
 		29:
-			newDialogue.connect("end_dialogue", self, "_on_dialogue_E2A_endV")
+#			newDialogue.connect("end_dialogue", self, "_on_dialogue_E2A_endV")
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_01.json"
 		31:
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_02.json"
@@ -352,8 +353,8 @@ func createStateChart():
 	taskActionPointer.push_back(funcref(self, "triggerItemInventory"))
 	# 29: EVA2_01
 	# Dep : EVE0_01
-	# Repeat : once
-	taskStatus.push_back([false, -2])
+	# Repeat : once => inf
+	taskStatus.push_back([false, -2]) # -1
 	taskInheritance.push_back([2])
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 30: EVA0_01
