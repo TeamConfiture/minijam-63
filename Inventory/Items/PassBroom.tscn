@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Inventory/InventoryItem.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/passBroom.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/PassBroom.png" type="Texture" id=2]
 
 [node name="PassBroom" type="TextureRect"]
 margin_right = 90.0

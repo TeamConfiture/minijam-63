@@ -154,13 +154,13 @@ func triggerItemInventory(actionId: int):
 	match actionId:
 		19:
 			print("Item handling for 19")
-			Inventory._on_add_inventory_item("TenueBalayeur")
+			Inventory._on_add_inventory_item("TenueBroom")
 		21:
 			print("Item handling for 21")
 			Inventory._on_add_inventory_item("ClefPlacard")
 		24:
 			print("Item handling for 24")
-			Inventory._on_add_inventory_item("PassBalayeur")
+			Inventory._on_add_inventory_item("PassBroom")
 		27:
 			print("Item handling for 27")
 		28:

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Pass.png-b6643119671b6a47154adb5e3f951994.stex"
+path="res://.import/PassBroom.png-321669713e631bac9ac71414dde1bce3.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cursors/Pass.png"
-dest_files=[ "res://.import/Pass.png-b6643119671b6a47154adb5e3f951994.stex" ]
+source_file="res://Assets/Sprites/PassBroom.png"
+dest_files=[ "res://.import/PassBroom.png-321669713e631bac9ac71414dde1bce3.stex" ]
 
 [params]
 

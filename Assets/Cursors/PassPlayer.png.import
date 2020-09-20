@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/pass_mc.png-0f5d9409ead5a8074de98d817ad1972a.stex"
+path="res://.import/PassPlayer.png-c2495a28511cba531e0425216e1056f4.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Sprites/pass_mc.png"
-dest_files=[ "res://.import/pass_mc.png-0f5d9409ead5a8074de98d817ad1972a.stex" ]
+source_file="res://Assets/Cursors/PassPlayer.png"
+dest_files=[ "res://.import/PassPlayer.png-c2495a28511cba531e0425216e1056f4.stex" ]
 
 [params]
 

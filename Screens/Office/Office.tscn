@@ -4,7 +4,7 @@
 [ext_resource path="res://Screens/ScreenChanger.gd" type="Script" id=2]
 [ext_resource path="res://Global/ClickableNode.gd" type="Script" id=3]
 [ext_resource path="res://Global/PickableItem.gd" type="Script" id=4]
-[ext_resource path="res://Assets/Sprites/pass_mc.png" type="Texture" id=5]
+[ext_resource path="res://Assets/Sprites/PassPlayer.png" type="Texture" id=5]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 29.9513, 41.3318 )
@@ -48,16 +48,16 @@ polygon = PoolVector2Array( -184.655, -92.1945, 163.308, -87.7047, 161.063, 85.1
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="ComputerRight"]
 polygon = PoolVector2Array( -171.186, 152.502, -142.002, 197.401, 214.941, 199.646, 154.328, 150.257 )
 
-[node name="Pass" type="Area2D" parent="."]
+[node name="PassPlayer" type="Area2D" parent="."]
 position = Vector2( 1087.86, 660.818 )
 script = ExtResource( 4 )
 my_step_left = 6
 
-[node name="Sprite" type="Sprite" parent="Pass"]
+[node name="Sprite" type="Sprite" parent="PassPlayer"]
 scale = Vector2( 0.07, 0.07 )
 texture = ExtResource( 5 )
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Pass"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PassPlayer"]
 position = Vector2( -5.03967, 7.55951 )
 shape = SubResource( 1 )
 
@@ -82,5 +82,5 @@ shape = SubResource( 2 )
 [connection signal="input_event" from="HangarDoor" to="HangarDoor" method="_change_screen" binds= [ "Hangar" ]]
 [connection signal="input_event" from="ComputerLeft" to="ComputerLeft" method="onArea2Dinputevent"]
 [connection signal="input_event" from="ComputerRight" to="ComputerRight" method="onArea2Dinputevent"]
-[connection signal="input_event" from="Pass" to="Pass" method="_on_PickableItem_input_event"]
+[connection signal="input_event" from="PassPlayer" to="PassPlayer" method="_on_PickableItem_input_event"]
 [connection signal="input_event" from="ClickableNode" to="ClickableNode" method="onArea2Dinputevent"]

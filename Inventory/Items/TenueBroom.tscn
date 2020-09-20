@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Inventory/InventoryItem.gd" type="Script" id=1]
-[ext_resource path="res://Assets/Sprites/tenueBalayeur.png" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/TenueBroom.png" type="Texture" id=2]
 
-[node name="TenueBalayeur" type="TextureRect"]
+[node name="TenueBroom" type="TextureRect"]
 margin_right = 90.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 90, 90 )

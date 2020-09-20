@@ -7,12 +7,12 @@
 [ext_resource path="res://Global/ClickableNode.gd" type="Script" id=5]
 [ext_resource path="res://Screens/Hangar/Hangar.gd" type="Script" id=6]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 74.6505
+[sub_resource type="CircleShape2D" id=3]
+radius = 76.6075
 
 [sub_resource type="CapsuleShape2D" id=2]
-radius = 164.756
-height = 195.326
+radius = 146.041
+height = 168.264
 
 [node name="Hangar" type="Node2D"]
 script = ExtResource( 6 )
@@ -49,36 +49,35 @@ script = ExtResource( 2 )
 position = Vector2( -951.69, 437.189 )
 polygon = PoolVector2Array( 1718.72, 533.892, 2026.59, 534.734, 1874.68, 650.17 )
 
-[node name="ClickableNode" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1525.71, 361.15 )
+[node name="ClickableNode2" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1445.33, 355.782 )
 myStepRight = 14
 myStepItem = {
-"Item4": -1,
+"ClefPlacard": -1,
 "Item5": -1,
-"PassBalayeur": 13,
-"PassHeros": -1,
-"TenueBalayeur": -1,
+"PassBroom": 13,
+"PassPlayer": -1,
+"TenueBroom": -1,
 "none": 12
 }
 
-[node name="CollisionShape2D" parent="ClickableNode" index="0"]
-position = Vector2( -75.2314, -1.01855 )
-shape = SubResource( 1 )
+[node name="CollisionShape2D" parent="ClickableNode2" index="0"]
+shape = SubResource( 3 )
 
-[node name="ClickableNode2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1164.82, 366.901 )
+[node name="ClickableNode4" parent="." instance=ExtResource( 4 )]
+position = Vector2( 1051.66, 493.885 )
 myStepRight = 15
 myStepItem = {
-"Item4": -1,
+"ClefPlacard": -1,
 "Item5": -1,
-"PassBalayeur": -1,
-"PassHeros": -1,
-"TenueBalayeur": 19,
+"PassBroom": -1,
+"PassPlayer": -1,
+"TenueBroom": 19,
 "none": 16
 }
 
-[node name="CollisionShape2D" parent="ClickableNode2" index="0"]
-position = Vector2( -116.503, 136.862 )
+[node name="CollisionShape2D" parent="ClickableNode4" index="0"]
+position = Vector2( 3.17468, 4.76218 )
 shape = SubResource( 2 )
 
 [node name="ClickableNode3" type="Area2D" parent="."]
@@ -101,6 +100,6 @@ polygon = PoolVector2Array( 44.2636, 163.496, -82.5461, 172.173, -86.3003, -85.7
 [connection signal="input_event" from="LaverieDoor" to="LaverieDoor" method="_change_screen" binds= [ "Laverie" ]]
 [connection signal="input_event" from="ClickableNode3" to="ClickableNode3" method="onArea2Dinputevent"]
 
-[editable path="ClickableNode"]
-
 [editable path="ClickableNode2"]
+
+[editable path="ClickableNode4"]
