@@ -70,3 +70,7 @@ func reset_login():
 	screen.text += "\nYour system manager will be informed and you will be *fired*."
 	screen.text += "\nPlease try again\n\n"
 	screen.text += login_querry
+
+
+func _on_Button_pressed():
+	self.visible = false
