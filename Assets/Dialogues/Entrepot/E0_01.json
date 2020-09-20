@@ -1,0 +1,32 @@
+{
+	"nameLeft": "MC",
+	"nameRight": "R",
+	"imageLeft": "res://Assets/Sprites/MC_talking.png",
+	"imageRight": "res://Assets/Sprites/robot_panik.png",
+	"lines": [
+		{
+			"side": "left",
+			"line": "Oh ! What is a robot2000 doing here?"
+		},
+		{
+			"side": "right",
+			"line": "Hello you! You seem interesting! Let’s be friends! Or else I’ll mess you up!"
+		},
+		{
+			"side": "left",
+			"line": "Hmmmm"
+		},
+		{
+			"side": "right",
+			"line": "You [i]do[/i] want to be my friend… right?"
+		},
+		{
+			"side": "left",
+			"line": "Oh yes! Yes! Yes!"
+		},
+		{
+			"side": "right",
+			"line": "Awesome! By the way, let me know if you need my help with anything!"
+		}
+	]
+}

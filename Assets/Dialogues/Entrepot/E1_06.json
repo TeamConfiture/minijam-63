@@ -1,0 +1,28 @@
+{
+	"nameLeft": "MC",
+	"nameRight": "John",
+	"imageLeft": "res://Assets/Sprites/MC_thinking.png",
+	"imageRight": "res://Assets/Sprites/balayeur.png",
+	"lines": [
+		{
+			"side": "left",
+			"line": "Hey John."
+		},
+		{
+			"side": "right",
+			"line": "Hey, colleague."
+		},
+		{
+			"side": "left",
+			"line": "It’s me !"
+		},
+		{
+			"side": "left",
+			"line": "Do you have access to the archives?"
+		},
+		{
+			"side": "right",
+			"line": "I do, but I left my pass in the closet… I think. Anyway, here’s the key."
+		}
+	]
+}

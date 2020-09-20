@@ -1,0 +1,12 @@
+{
+	"nameLeft": "",
+	"nameRight": "AI",
+	"imageLeft": "",
+	"imageRight": "res://Assets/Sprites/AI.png",
+	"lines": [
+		{
+			"side": "right",
+			"line": "Access to the archives is restricted to authorized personnel only. Please use a valid employee pass to enter."
+		}
+	]
+}

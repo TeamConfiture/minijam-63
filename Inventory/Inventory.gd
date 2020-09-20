@@ -8,7 +8,7 @@ func _ready():
 	#_on_add_inventory_item("Lapignon")
 	self.visible = false
 
-func _process(delta):
+func _process(_delta):
 	if Input.is_action_just_released("ui_pause"):
 		current_item = "none"
 		
