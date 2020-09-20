@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PH_OutputB.png-c584e01626572ad37f835a078e4ecc82.stex"
+path="res://.import/inputV.jpg-3ec7f5a0b5898237eee4020390e3cbaf.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Docs/PH_OutputB.png"
-dest_files=[ "res://.import/PH_OutputB.png-c584e01626572ad37f835a078e4ecc82.stex" ]
+source_file="res://MiniGame/Labyrinthe/inputV.jpg"
+dest_files=[ "res://.import/inputV.jpg-3ec7f5a0b5898237eee4020390e3cbaf.stex" ]
 
 [params]
 

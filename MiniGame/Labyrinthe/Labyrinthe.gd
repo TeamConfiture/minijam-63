@@ -29,8 +29,8 @@ func generateLab():
 	status.append([0,0,0,0,0])
 	var temp = 0
 #	var test = ["default", "i", "T", "I", "r"]
-	var inImgs = ["res://Docs/PH_InputB.png", "res://Docs/PH_InputR.png", "res://Docs/PH_InputV.png"]
-	var outImgs = ["res://Docs/PH_OutputB.png", "res://Docs/PH_OutputR.png", "res://Docs/PH_OutputV.png"]
+	var inImgs = ["res://MiniGame/Labyrinthe/inputB.jpg", "res://MiniGame/Labyrinthe/inputR.jpg", "res://MiniGame/Labyrinthe/inputV.jpg"]
+	var outImgs = ["res://MiniGame/Labyrinthe/outputB.jpg", "res://MiniGame/Labyrinthe/outputR.jpg", "res://MiniGame/Labyrinthe/outputV.jpg"]
 	var theIndex = null
 	for i in range(size+2): # selon x
 		for j in range(size+2): # selon y
@@ -44,20 +44,20 @@ func generateLab():
 				buttons[theIndex].col=i-1
 				buttons[theIndex].monSens = (i == 0 or i == size+1)
 				buttons[theIndex].maDirection = (i == size+1 or j == size+1)
-				buttons[theIndex].set_scale(Vector2( .2, .2))
+#				buttons[theIndex].set_scale(Vector2( .2, .2))
 				buttons[theIndex].connect("triggered", self, "_on_Bouton_laby_triggered")
 				self.add_child(buttons[theIndex])
 	#			nodes[i][j].set_texture(load("res://Docs/PH_Labyrinthe_p.png"))
 				var x = 0
 				var y = 0
 				if i == 0:
-					x = -100 - 20
+					x = -100
 				else:
-					x = ((i-1) * 100) + 20
+					x = ((i-1) * 100)
 				if j == 0:
-					y = -100 - 20
+					y = -100
 				else:
-					y = ((j-1) * 100) + 20
+					y = ((j-1) * 100)
 				buttons[theIndex].set_position(Vector2(x, y))
 	for i in range(size): # selon x
 		nodes.append([])
@@ -91,7 +91,7 @@ func generateLab():
 			y = -100
 		else:
 			y = ((e.y-1) * 100)
-		print(e.x, ";", e.y, ";", x, ";", y)
+#		print(e.x, ";", e.y, ";", x, ";", y)
 		inNodes[-1].set_position(Vector2(x, y))
 	temp = 0
 	for e in outputs:
@@ -111,7 +111,7 @@ func generateLab():
 			y = -100
 		else:
 			y = ((e.y-1) * 100)
-		print(e.x, ";", e.y, ";", x, ";", y)
+#		print(e.x, ";", e.y, ";", x, ";", y)
 		outNodes[-1].set_position(Vector2(x, y))
 	temp = 0
 	
