@@ -3,7 +3,7 @@
 [ext_resource path="res://Inventory/InventoryItem.gd" type="Script" id=1]
 [ext_resource path="res://Tests/cat.png" type="Texture" id=2]
 
-[node name="ClefArchive" type="TextureRect"]
+[node name="ClefPlacard" type="TextureRect"]
 margin_right = 90.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 90, 90 )

@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Charlie.png-fbb9195147c4b3e8b801172e8c43e372.stex"
+path="res://.import/Pass.png-b6643119671b6a47154adb5e3f951994.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cursors/Charlie.png"
-dest_files=[ "res://.import/Charlie.png-fbb9195147c4b3e8b801172e8c43e372.stex" ]
+source_file="res://Assets/Cursors/Pass.png"
+dest_files=[ "res://.import/Pass.png-b6643119671b6a47154adb5e3f951994.stex" ]
 
 [params]
 

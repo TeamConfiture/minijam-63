@@ -21,6 +21,14 @@ polygon = PoolVector2Array( 1995.47, 415.388, 2418.71, 414.306, 2417.77, 749.381
 [node name="ClickableNode" type="Area2D" parent="."]
 script = ExtResource( 3 )
 myStepRight = 17
+myStepItem = {
+"ClefPlacard": -1,
+"Item5": -1,
+"PassBalayeur": -1,
+"PassHeros": -1,
+"TenueBalayeur": -1,
+"none": 18
+}
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ClickableNode"]
 polygon = PoolVector2Array( 1394.4, 255.411, 1596, 155.405, 1601.24, 871.709, 1400.75, 749.093 )

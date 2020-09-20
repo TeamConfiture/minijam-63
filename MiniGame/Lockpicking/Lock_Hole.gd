@@ -1,5 +1,7 @@
 extends Area2D
 
+signal success()
+
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
@@ -7,9 +9,9 @@ var screen_size
 var mouse_over = false
 var picking = false
 var picked = false
-var phase_timer = [3.75, 1.25, 2]
+var phase_timer = [4.5, 1.5, 2.5]
 var timer
-var phase_speed = [PI/2.5, -PI/2.5, PI/2.0]
+var phase_speed = [PI/3, -PI/3, PI/2.5]
 var phase = 0
 var angle = PI/2.0
 var center = Vector2()
@@ -42,8 +44,9 @@ func _process(delta):
 		if timer < 0:
 			if phase == phase_timer.size() - 1:
 				picked = true
-				print_debug ("success!");
-				reset()
+				
+				emit_signal("success")
+				
 			else:
 				phase += 1
 				timer = phase_timer[phase]

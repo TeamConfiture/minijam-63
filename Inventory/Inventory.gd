@@ -9,6 +9,14 @@ func _ready():
 	self.visible = false
 	self.hide()
 
+
+func find_child_by_name(name: String, children :Array):
+	for c in children:
+		if c.name == name:
+			return c
+	
+	return null
+	
 func changeVisibility(isVisible: bool):
 	if isVisible:
 		self.visible = true
@@ -23,11 +31,15 @@ func _process(_delta):
 		
 # Adds an item to inventory by name
 func _on_add_inventory_item(item: String):
-	var i = load("res://Inventory/Items/"+ item + ".tscn")
+	if find_child_by_name(item, container.get_children()) == null:
+		var i = load("res://Inventory/Items/"+ item + ".tscn")
 
-	if i == null:
+		if i == null:
+			return false
+
+		container.add_child(i.instance())
+		print("We added item ", item)
+		return true
+	else:
+		print("We already have item ", item)
 		return false
-
-	container.add_child(i.instance())
-	
-	return true

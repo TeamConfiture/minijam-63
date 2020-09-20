@@ -3,7 +3,7 @@ extends Area2D
 #signal step(step);
 
 export var myStepRight = -1;
-export var myStepItem = {"none": -1,"PassHeros": -1,"PassBalayeur": -1,"TenueBalayeur": -1,"ClefPlacard": -1,"Item5": -1};
+export var myStepItem = {"none": -1,"Pass": -1,"PassBalayeur": -1,"TenueBalayeur": -1,"ClefPlacard": -1,"Item5": -1};
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
