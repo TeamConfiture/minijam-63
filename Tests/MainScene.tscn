@@ -18,6 +18,7 @@ script = ExtResource( 2 )
 position = Vector2( 130.353, 136.346 )
 scale = Vector2( 0.323147, 0.360689 )
 script = ExtResource( 4 )
+my_step_left = 0
 
 [node name="CharlieSprite" type="Sprite" parent="Charlie"]
 texture = ExtResource( 3 )
@@ -28,6 +29,7 @@ shape = SubResource( 1 )
 [node name="Lapignon" type="Area2D" parent="."]
 position = Vector2( 350, 350 )
 script = ExtResource( 4 )
+my_step_right = 0
 
 [node name="LapignonSprite" type="Sprite" parent="Lapignon"]
 texture = ExtResource( 1 )
