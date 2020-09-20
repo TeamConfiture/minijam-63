@@ -36,6 +36,8 @@ func generateLab():
 		for j in range(size+2): # selon y
 			theIndex = [i,j] # on a donc x;y <=> colonne;ligne <=> i;j
 			if (((i == 0 or i == size+1) or (j == 0 or j == size+1)) and not((i == 0 or i == size+1) and (j == 0 or j == size+1))):
+				if (i%2==0 and j%2==0):
+					continue
 #				print("Created ", theIndex)
 				buttons[theIndex] = labyButtonTemplate.instance()
 				buttons[theIndex].line=j-1
@@ -117,16 +119,20 @@ func shuffle():
 	var rnd=0
 	var rndDir = false
 	for i in range(size):
-		rnd = rng.randi_range(0,4)
+		if i%2 != 0:
+			continue
+		rnd = rng.randi_range(0,2)
 #		rnd = rng.randi_range(0,0)
 		for j in range(rnd):
-			rndDir = (rng.randi_range(0,4) % 2 == 1)
+			rndDir = (rng.randi_range(0,3) % 2 == 1)
 			_on_Bouton_laby_triggered(true, rndDir, false, i, 0)
 	for i in range(size):
-		rnd = rng.randi_range(0,4)
+		if i%2 != 0:
+			continue
+		rnd = rng.randi_range(0,2)
 #		rnd = rng.randi_range(0,1)
 		for j in range(rnd):
-			rndDir = (rng.randi_range(0,4) % 2 == 1)
+			rndDir = (rng.randi_range(0,3) % 2 == 1)
 			_on_Bouton_laby_triggered(rndDir, true, false, 0, i)
 
 # Called when the node enters the scene tree for the first time.
