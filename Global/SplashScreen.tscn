@@ -3,7 +3,6 @@
 [ext_resource path="res://Assets/SplashScreen/lapignon.png" type="Texture" id=1]
 [ext_resource path="res://Global/SplashScreen.gd" type="Script" id=2]
 
-
 [sub_resource type="Animation" id=1]
 resource_name = "fade_in"
 tracks/0/type = "value"
@@ -53,3 +52,4 @@ autostart = true
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 anims/fade_in = SubResource( 1 )
 [connection signal="timeout" from="LogoTimer" to="." method="_on_LogoTimer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_AnimationPlayer_animation_finished"]
