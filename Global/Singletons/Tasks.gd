@@ -25,6 +25,10 @@ var miniGameShell =  preload("res://MiniGame/Shell/Shell.tscn")
 func _on_dialogue_E2A_end():
 	action(29)
 
+func _on_dialogue_Laby_end():
+	triggerMinigame(18)
+	Inventory._on_add_inventory_item("ClefArchive")
+
 func dummyAction(actionId: int):
 	print("Dummy action ", actionId, "was called !")
 
@@ -57,7 +61,10 @@ func triggerDialogue(actionId: int):
 		16:
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_05.json"
 		17:
-			print("Dialogue for 17")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Laverie/L1_01.json"
+		18:
+			newDialogue.connect("end_dialogue", self, "_on_dialogue_Laby_end")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Laverie/L1_02.json"
 		19:
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_06.json"
 		20:
@@ -68,19 +75,20 @@ func triggerDialogue(actionId: int):
 			newDialogue.connect("end_dialogue", self, "_on_dialogue_E2A_end")
 			newDialogue.dialogue_file = "res://Assets/Dialogues/Entrepot/E1_10.json"
 		29:
-			print("Dialogue for 29")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_01.json"
 		31:
-			print("Dialogue for 31")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_02.json"
+		32:
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_03.json"
 		33:
-			print("Dialogue for 33")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_04.json"
 		34:
-			print("Dialogue for 34")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_05.json"
 		35:
-			print("Dialogue for 35")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_06.json"
 		36:
-			print("Dialogue for 36")
-		37:
-			print("Dialogue for 37")
+			newDialogue.dialogue_file = "res://Assets/Dialogues/Archives/A2_07.json"
+
 		_:
 			print("Unrecognised event id : ", actionId)
 			return false
@@ -104,8 +112,8 @@ func triggerMinigame(actionId: int):
 		22:
 			print("Item handling for 22")
 			sceneInstance = miniGameLockpick.instance()
-		32:
-			print("Item handling for 32")
+		37:
+			print("Item handling for 37")
 			sceneInstance = miniGameShell.instance()
 		_:
 			print("Unrecognised event id : ", actionId)
@@ -249,7 +257,7 @@ func createStateChart():
 	# Repeat : once
 	taskStatus.push_back([false, 1])
 	taskInheritance.push_back([2])
-	taskActionPointer.push_back(funcref(self, "triggerMinigame"))
+	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 19: EVE1_06
 	# Dep : EVE0_01
 	# Repeat : once
@@ -333,7 +341,7 @@ func createStateChart():
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
 	taskInheritance.push_back([12,29])
-	taskActionPointer.push_back(funcref(self, "triggerMinigame"))
+	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 33: EVA2_04
 	# Dep : EVE0_01, EVA2_01, EVA2_03
 	# Repeat : inf
@@ -363,7 +371,7 @@ func createStateChart():
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
 	taskInheritance.push_back([12,29])
-	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
+	taskActionPointer.push_back(funcref(self, "triggerMinigame"))
 	# 38: EVA2_09
 	# Dep : EVE0_01, EVA2_01, EVA2_08
 	# Repeat : once
