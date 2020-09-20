@@ -8,6 +8,7 @@
 script = ExtResource( 3 )
 
 [node name="Bouton_laby" parent="." instance=ExtResource( 1 )]
+position = Vector2( 176.777, 890.955 )
 reset = true
 
 [node name="Labyrinthe" type="Node2D" parent="."]
