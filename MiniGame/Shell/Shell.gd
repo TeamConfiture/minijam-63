@@ -60,8 +60,10 @@ func check_user():
 func successful_login():
 	correct_sound.play()
 	screen.text += "--------------------------------------\nCongratulation! This is a sample text.\n--------------------------------------"
+	Inventory.changeVisibility(false)
+	Bgm.stop()
 	Global.goto_scene("res://Global/Outro.tscn")
-	Inventory.changeVisibility(true)
+	
 
 func reset_login():
 	error_sound.play()
