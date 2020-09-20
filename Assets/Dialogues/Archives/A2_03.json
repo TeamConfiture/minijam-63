@@ -1,0 +1,17 @@
+{
+	"nameLeft": "MC",
+	"nameRight": "Interface",
+	"imageLeft": "res://Assets/Sprites/MC_thinking.png",
+	"imageRight": "",
+	"lines": [
+		{
+			"side": "left",
+			"line": "There are too many files, which one should I choose ?"
+		},
+        {
+			"side": "right",
+			"line": "Please, enter an ID."
+		}
+        
+	]
+}

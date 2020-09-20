@@ -1,0 +1,24 @@
+{
+	"nameLeft": "MC",
+	"nameRight": "",
+	"imageLeft": "res://Assets/Sprites/MC_thinking.png",
+	"imageRight": "",
+	"lines": [
+		{
+			"side": "left",
+			"line": "How come, “unknown”? I thought they had all the information?"
+		},
+        {
+			"side": "left",
+			"line": "By the way… When was I born? And where?"
+		},
+        {
+			"side": "left",
+			"line": "Why can’t I remember anything?"
+		},
+        {
+			"side": "left",
+			"line": "I need to access digital archives. They’re probably more up-to-date."
+		}
+	]
+}

@@ -1,0 +1,12 @@
+{
+	"nameLeft": "MC",
+	"nameRight": "",
+	"imageLeft": "res://Assets/Sprites/MC_thinking.png",
+	"imageRight": "",
+	"lines": [
+		{
+			"side": "left",
+			"line": "The employees’ files. They contain all the employees’ confidential information."
+		}
+	]
+}
