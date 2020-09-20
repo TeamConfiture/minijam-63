@@ -7,12 +7,12 @@ export var originalTab= []
 export var inputs = []
 export var outputs = []
 
-var status = []
-
 var nodes = []
 var buttons = {}
 var inNodes = []
 var outNodes = []
+
+var useless_tiles = [[1,1], [3,1], [1,2], [3,2], [1,5]]
 
 var rng = RandomNumberGenerator.new()
 
@@ -20,13 +20,10 @@ var labyTileTemplate =  preload("res://MiniGame/Labyrinthe/LabyrintheTile.tscn")
 var labyButtonTemplate =  preload("res://MiniGame/Labyrinthe/Bouton_laby.tscn")
 
 func generateLab():
-	status.clear()
 	nodes.clear()
 	buttons.clear()
 	inNodes.clear()
 	outNodes.clear()
-	status.append([0,0,0,0,0])
-	status.append([0,0,0,0,0])
 	var temp = 0
 #	var test = ["default", "i", "T", "I", "r"]
 	var inImgs = ["res://MiniGame/Labyrinthe/inputB.jpg", "res://MiniGame/Labyrinthe/inputR.jpg", "res://MiniGame/Labyrinthe/inputV.jpg"]
@@ -67,6 +64,7 @@ func generateLab():
 #				print(i, ";", j, " got type ", temp, " : ", test[temp])
 			nodes[i][j].setTileType(originalTab[0][j*size+i])
 			nodes[i][j].rotateTile(originalTab[1][j*size+i])
+			
 #			nodes[i][j].setTileType(test[temp])
 #			temp += 1
 #			if temp >= 5:
@@ -125,7 +123,7 @@ func shuffle():
 #		rnd = rng.randi_range(0,0)
 		for _j in range(rnd):
 			rndDir = (rng.randi_range(0,3) % 2 == 1)
-			_on_Bouton_laby_triggered(true, rndDir, false, i, 0)
+			move(rndDir, true, false, i, 0)
 	for i in range(size):
 		if i%2 != 0:
 			continue
@@ -133,7 +131,7 @@ func shuffle():
 #		rnd = rng.randi_range(0,1)
 		for _j in range(rnd):
 			rndDir = (rng.randi_range(0,3) % 2 == 1)
-			_on_Bouton_laby_triggered(rndDir, true, false, 0, i)
+			move(rndDir, false, false, 0, i)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -148,20 +146,18 @@ func _ready():
 #	pass
 
 func recalculatePath():
-	for e in status:
-		for f in e:
-			while f < 0:
-				f += 5
-			while f > 4:
-				f -= 5
-			if f != 0:
-#				print("False")
-				return false
+	for i in range(size):
+		for j in range(size):
+			if not([i+1,j+1] in useless_tiles):
+				if nodes[i][j].myType != originalTab[0][j*size+i]:
+					return false
+				if nodes[i][j].myRotate != originalTab[1][j*size+i]:
+					return false
 #	print("True")
 	emit_signal("end_minigame")
 	return true
 	
-func _on_Bouton_laby_triggered(maDirection, monSens, reset, line, column):
+func move(maDirection, monSens, reset, line, column):
 	if reset:
 		generateLab()
 		shuffle()
@@ -173,7 +169,6 @@ func _on_Bouton_laby_triggered(maDirection, monSens, reset, line, column):
 	if monSens:
 		var nodeTemp = null
 		if maDirection:
-			status[0][line] += 1
 #			print("droite")
 			nodeTemp = nodes[size-1][line]
 			for i in range(size-1, 0, -1):
@@ -181,7 +176,6 @@ func _on_Bouton_laby_triggered(maDirection, monSens, reset, line, column):
 				nodes[i][line] = nodes[i-1][line]
 			nodes[0][line] = nodeTemp
 		else:
-			status[0][line] -= 1
 #			print("gauche")
 			nodeTemp = nodes[0][line]
 			for i in range(size-1):
@@ -193,15 +187,16 @@ func _on_Bouton_laby_triggered(maDirection, monSens, reset, line, column):
 		
 	else:
 		if maDirection:
-			status[1][column] += 1
 #			print("bas")
 			nodes[column].push_front(nodes[column].pop_back())
 		else:
-			status[1][column] -= 1
 #			print("haut")
 			nodes[column].push_back(nodes[column].pop_front())
 		
 		for i in range(size):
 			nodes[column][i].set_position(Vector2(column*100, i*100))
 			
+
+func _on_Bouton_laby_triggered(maDirection, monSens, reset, line, column):
+	move(maDirection, monSens, reset, line, column)
 	recalculatePath()
