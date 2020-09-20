@@ -1,12 +1,13 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Screens/Office/office.jpg" type="Texture" id=1]
 [ext_resource path="res://Screens/ScreenChanger.gd" type="Script" id=2]
 [ext_resource path="res://Global/ClickableNode.gd" type="Script" id=3]
 [ext_resource path="res://Global/PickableItem.gd" type="Script" id=4]
+[ext_resource path="res://Assets/Sprites/pass_mc.png" type="Texture" id=5]
 
-[sub_resource type="CircleShape2D" id=1]
-radius = 53.3951
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 29.9513, 41.3318 )
 
 [sub_resource type="CircleShape2D" id=2]
 radius = 47.2341
@@ -48,17 +49,20 @@ polygon = PoolVector2Array( -184.655, -92.1945, 163.308, -87.7047, 161.063, 85.1
 polygon = PoolVector2Array( -171.186, 152.502, -142.002, 197.401, 214.941, 199.646, 154.328, 150.257 )
 
 [node name="Pass" type="Area2D" parent="."]
-position = Vector2( 1133.22, 914.062 )
+position = Vector2( 1087.86, 660.818 )
 script = ExtResource( 4 )
 my_step_left = 6
 
 [node name="Sprite" type="Sprite" parent="Pass"]
+scale = Vector2( 0.07, 0.07 )
+texture = ExtResource( 5 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Pass"]
+position = Vector2( -5.03967, 7.55951 )
 shape = SubResource( 1 )
 
 [node name="ClickableNode" type="Area2D" parent="."]
-position = Vector2( 1101.21, 651.685 )
+position = Vector2( 773.63, 816.735 )
 script = ExtResource( 3 )
 myStepRight = 9
 myStepItem = {

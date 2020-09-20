@@ -1,9 +1,9 @@
 [gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Inventory/InventoryItem.gd" type="Script" id=1]
-[ext_resource path="res://Tests/BG1.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Sprites/pass_mc.png" type="Texture" id=2]
 
-[node name="BG" type="TextureRect"]
+[node name="pass" type="TextureRect"]
 margin_right = 90.0
 margin_bottom = 90.0
 rect_min_size = Vector2( 90, 90 )
