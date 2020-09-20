@@ -9,6 +9,8 @@ onready var box_name_right = $NamesMargin/Names/NameRight
 onready var name_right = $NamesMargin/Names/NameRight/TextRight
 onready var main_text = $TextMargin/MainText/MarginContainer/TextZone
 
+onready var keyboard_sound = $Keyboard
+
 var lines
 var line = 0
 var current_line
@@ -27,9 +29,12 @@ func _ready():
 	set_new_line()
 
 
-func _process(delta):
+func _process(delta):	
 	n_displayed_char += delta * dialogue_speed
 	main_text.visible_characters = int(n_displayed_char)
+	if n_displayed_char > current_line["line"].length():
+		keyboard_sound.stop()
+	
 	if Input.is_action_pressed("ui_accept"):
 		n_displayed_char += delta * dialogue_speed
 	
@@ -75,3 +80,5 @@ func set_new_line():
 		_:
 			box_name_left.set_visible(false)
 			box_name_right.set_visible(false)
+	
+	keyboard_sound.play()

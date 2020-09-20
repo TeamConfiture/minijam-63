@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://Dialogues/Dialogue.gd" type="Script" id=2]
+[ext_resource path="res://Assets/SoundEffects/Dialogues/keyboard_sound.wav" type="AudioStream" id=3]
 
 [sub_resource type="DynamicFont" id=1]
 size = 40
@@ -132,3 +133,6 @@ visible_characters = 0
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="Keyboard" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
