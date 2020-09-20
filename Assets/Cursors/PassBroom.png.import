@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/tenueBalayeur.png-17946a47e75da8167e3eea84f92c6ade.stex"
+path="res://.import/PassBroom.png-3db18a8fda8824a44cdfe2c2649728b8.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Cursors/tenueBalayeur.png"
-dest_files=[ "res://.import/tenueBalayeur.png-17946a47e75da8167e3eea84f92c6ade.stex" ]
+source_file="res://Assets/Cursors/PassBroom.png"
+dest_files=[ "res://.import/PassBroom.png-3db18a8fda8824a44cdfe2c2649728b8.stex" ]
 
 [params]
 
