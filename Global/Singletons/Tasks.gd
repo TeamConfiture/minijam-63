@@ -322,8 +322,8 @@ func createStateChart():
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 22: EVE1_09
 	# Dep : EVE0_01, EVE1_06
-	# Repeat : once
-	taskStatus.push_back([false, -2])
+	# Repeat : once -> inf
+	taskStatus.push_back([false, -1])
 	taskInheritance.push_back([2,19])
 	taskActionPointer.push_back(funcref(self, "triggerMinigame"))
 	# 23: EVE1_11
