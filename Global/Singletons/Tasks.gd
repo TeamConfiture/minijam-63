@@ -239,7 +239,7 @@ func createStateChart():
 	# Dep : EVE0_01
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
-	taskInheritance.push_back([2])
+	taskInheritance.push_back([]) #removed 2
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 10: EVB1_05
 	# Dep : EVE0_01
