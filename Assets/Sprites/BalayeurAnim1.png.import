@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/office.png-3760439bee58ef691196100aa64a3561.stex"
+path="res://.import/BalayeurAnim1.png-5aadd31d8147355c8038344fbd96a323.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Screens/Office/office.png"
-dest_files=[ "res://.import/office.png-3760439bee58ef691196100aa64a3561.stex" ]
+source_file="res://Assets/Sprites/BalayeurAnim1.png"
+dest_files=[ "res://.import/BalayeurAnim1.png-5aadd31d8147355c8038344fbd96a323.stex" ]
 
 [params]
 
