@@ -90,11 +90,20 @@ position = Vector2( -29.6649, 12.7136 )
 shape = SubResource( 2 )
 
 [node name="ClickableNode2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 1504.75, 693.704 )
+position = Vector2( 1602.22, 608.947 )
 script = ExtResource( 5 )
+myStepRight = 36
+myStepItem = {
+"ClefPlacard": -1,
+"Item5": -1,
+"PassBroom": -1,
+"PassPlayer": -1,
+"TenueBroom": -1,
+"none": 37
+}
 
 [node name="CollisionShape2D" parent="ClickableNode2" index="0"]
-position = Vector2( 110.184, -101.708 )
+position = Vector2( 14.8323, -27.5455 )
 shape = SubResource( 3 )
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
