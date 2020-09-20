@@ -4,7 +4,7 @@
 [ext_resource path="res://Fonts/Comfortaa-Bold.ttf" type="DynamicFontData" id=2]
 [ext_resource path="res://Fonts/flipside.ttf" type="DynamicFontData" id=3]
 
-[sub_resource type="DynamicFont" id=4]
+[sub_resource type="DynamicFont" id=1]
 size = 100
 font_data = ExtResource( 3 )
 
@@ -14,7 +14,7 @@ bg_color = Color( 0.588235, 0.647059, 0.670588, 1 )
 [sub_resource type="StyleBoxFlat" id=3]
 bg_color = Color( 0.164706, 0.215686, 0.278431, 1 )
 
-[sub_resource type="DynamicFont" id=8]
+[sub_resource type="DynamicFont" id=4]
 size = 46
 font_data = ExtResource( 2 )
 
@@ -48,7 +48,7 @@ custom_constants/separation = 160
 [node name="GameName" type="Label" parent="MarginContainer/VBoxContainer"]
 margin_right = 920.0
 margin_bottom = 100.0
-custom_fonts/font = SubResource( 4 )
+custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
 text = "Confuture"
 align = 1
@@ -79,7 +79,7 @@ margin_bottom = 52.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
 text = "Play"
 __meta__ = {
@@ -93,7 +93,7 @@ margin_bottom = 164.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
 text = "Credits"
 __meta__ = {
@@ -107,7 +107,7 @@ margin_bottom = 276.0
 custom_styles/hover = SubResource( 2 )
 custom_styles/pressed = SubResource( 3 )
 custom_styles/normal = SubResource( 3 )
-custom_fonts/font = SubResource( 8 )
+custom_fonts/font = SubResource( 4 )
 custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
 text = "Quit"
 __meta__ = {
