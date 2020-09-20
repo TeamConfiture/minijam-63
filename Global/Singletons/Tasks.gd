@@ -19,7 +19,7 @@ var taskActionPointer = [] # tab de pointeurs de fonction
 	
 
 func dummyAction(actionId: int):
-	print("Action ", actionId, "was called !")
+	print("Dummy action ", actionId, "was called !")
 
 func createStateChart():
 		
@@ -275,14 +275,17 @@ func _ready():
 func action(actionNumber: int):
 	if taskStatus.size() <= actionNumber:
 		return false
-	if taskStatus[actionNumber]:
-		return false
 	for task in taskInheritance[actionNumber]:
-		if not taskStatus[task]:
+		if not taskStatus[task][0]:
+			return false
+	if taskStatus[actionNumber][1] != -1:
+		if taskStatus[actionNumber][0] == true and taskStatus[actionNumber][1]==1:
+			return false
+		elif taskStatus[taskStatus[actionNumber][1]][0] == true:
 			return false
 	print("Calling with ",actionNumber)
 	taskActionPointer[actionNumber].call_func(actionNumber)
-	taskStatus[actionNumber] = true
+	taskStatus[actionNumber][0] = true
 	return true
 
 
