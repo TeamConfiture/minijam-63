@@ -6,10 +6,10 @@
 [ext_resource path="res://Global/PickableItem.gd" type="Script" id=4]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 29.6532
+radius = 53.3951
 
 [sub_resource type="CircleShape2D" id=2]
-radius = 32.1403
+radius = 47.2341
 
 [node name="Office" type="Node2D"]
 
@@ -71,6 +71,7 @@ myStepItem = {
 }
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ClickableNode"]
+position = Vector2( 0, -1.41418 )
 shape = SubResource( 2 )
 
 [node name="Sprite" type="Sprite" parent="ClickableNode"]

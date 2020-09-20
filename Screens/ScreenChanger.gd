@@ -7,5 +7,5 @@ func _change_screen(_viewport, event, _shape_idx, scene_name: String):
 		Global.goto_scene("res://Screens/" + scene_name + "/" + scene_name + ".tscn")
 		Inventory.changeVisibility(true)
 		if scene_name.begins_with("Hangar"):
-			Tasks.action(2)
+			Tasks.action(1)
 		#Tasks.triggerChangeScreen(24)

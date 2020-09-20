@@ -108,5 +108,7 @@ func set_new_line():
 	keyboard_sound.play(rng.randf_range(0.0, 6.0))
 
 func load_texture(path: String, texture_rect: TextureRect):
+	if path == "":
+		path = "res://Assets/Sprites/empty.png"
 	var texture = load(path)
 	texture_rect.texture = texture

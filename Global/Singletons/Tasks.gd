@@ -147,7 +147,7 @@ func createStateChart():
 	# 0: EVB0_01
 	# Dep : none
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([])
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 1: EVB0_02
@@ -159,7 +159,7 @@ func createStateChart():
 	# 2: EVE0_01
 	# Dep : EVB0_02
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([1])
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 3: EVE0_02
@@ -183,7 +183,7 @@ func createStateChart():
 	# 6: EVB1_01
 	# Dep : EVE0_01
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([2])
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 7: EVB1_02
@@ -215,7 +215,7 @@ func createStateChart():
 	# Repeat : inf
 	taskStatus.push_back([false, -1])
 	taskInheritance.push_back([2])
-	taskActionPointer.push_back(funcref(self, "triggerCinematic"))
+	taskActionPointer.push_back(funcref(self, "triggerCinematic")) # ordre de licenciement
 	# 12: EVE1_01
 	# Dep : EVE0_01
 	# Repeat : inf
@@ -255,13 +255,13 @@ func createStateChart():
 	# 18: EVL1_02
 	# Dep : EVE0_01
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([2])
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 19: EVE1_06
 	# Dep : EVE0_01
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([2])
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 20: EVE1_07
@@ -279,7 +279,7 @@ func createStateChart():
 	# 22: EVE1_09
 	# Dep : EVE0_01, EVE1_06
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([2,19])
 	taskActionPointer.push_back(funcref(self, "triggerMinigame"))
 	# 23: EVE1_11
@@ -291,7 +291,7 @@ func createStateChart():
 	# 24: EVP1_01
 	# Dep : EVE0_01, EVE1_09
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([2,22])
 	taskActionPointer.push_back(funcref(self, "triggerItemInventory"))
 	# 25: EVP1_02
@@ -321,7 +321,7 @@ func createStateChart():
 	# 29: EVA2_01
 	# Dep : EVE0_01
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([2])
 	taskActionPointer.push_back(funcref(self, "triggerDialogue"))
 	# 30: EVA0_01
@@ -375,7 +375,7 @@ func createStateChart():
 	# 38: EVA2_09
 	# Dep : EVE0_01, EVA2_01, EVA2_08
 	# Repeat : once
-	taskStatus.push_back([false, 1])
+	taskStatus.push_back([false, -2])
 	taskInheritance.push_back([12,29,37])
 	taskActionPointer.push_back(funcref(self, "triggerCinematic"))
 	
@@ -400,7 +400,7 @@ func action(actionNumber: int):
 		if not taskStatus[task][0]:
 			return false
 	if taskStatus[actionNumber][1] != -1:
-		if taskStatus[actionNumber][0] == true and taskStatus[actionNumber][1]==1:
+		if taskStatus[actionNumber][0] == true and taskStatus[actionNumber][1]==-2:
 			return false
 		elif taskStatus[taskStatus[actionNumber][1]][0] == true:
 			return false
