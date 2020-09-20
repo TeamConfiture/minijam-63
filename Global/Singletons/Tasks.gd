@@ -23,18 +23,34 @@ func dummyAction(actionId: int):
 
 func triggerDialogue(actionId: int):
 	print("We should trigger a dialogue for task id ",actionId, " here !")
+	match actionId:
+		_:
+			print("Unrecognised event id : ", actionId)
 	
 func triggerChangeScreen(actionId: int):
 	print("We should trigger a scene change for task id ",actionId, " here !")
+	match actionId:
+		_:
+			print("Unrecognised event id : ", actionId)
+	# Global.goto_scene("res://Screens/" + scene_name + "/" + scene_name + ".tscn")
 
 func triggerMinigame(actionId: int):
 	print("We should trigger a minigame for task id ",actionId, " here !")
+	match actionId:
+		_:
+			print("Unrecognised event id : ", actionId)
 
 func triggerCinematic(actionId: int):
 	print("We should trigger a cinematic for task id ",actionId, " here !")
+	match actionId:
+		_:
+			print("Unrecognised event id : ", actionId)
 
 func triggerItemInventory(actionId: int):
 	print("We should handle an item event for task id ",actionId, " here !")
+	match actionId:
+		_:
+			print("Unrecognised event id : ", actionId)
 
 func createStateChart():
 	# 0: EVB0_01
