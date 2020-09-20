@@ -7,7 +7,7 @@
 [ext_resource path="res://Global/ClickableNode.gd" type="Script" id=5]
 [ext_resource path="res://Screens/Hangar/Hangar.gd" type="Script" id=6]
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=1]
 radius = 76.6075
 
 [sub_resource type="CapsuleShape2D" id=2]
@@ -55,14 +55,14 @@ myStepRight = 14
 myStepItem = {
 "ClefPlacard": -1,
 "Item5": -1,
-"PassBroom": 13,
-"PassPlayer": -1,
+"PassBroom": -1,
+"PassPlayer": 13,
 "TenueBroom": -1,
 "none": 12
 }
 
 [node name="CollisionShape2D" parent="ClickableNode2" index="0"]
-shape = SubResource( 3 )
+shape = SubResource( 1 )
 
 [node name="ClickableNode4" parent="." instance=ExtResource( 4 )]
 position = Vector2( 1051.66, 493.885 )
