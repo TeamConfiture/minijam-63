@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PH_InputR.png-c2cbd6595ce7955aba6c94f7757b0683.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
-source_file="res://Docs/PH_InputR.png"
-dest_files=[ "res://.import/PH_InputR.png-c2cbd6595ce7955aba6c94f7757b0683.stex" ]
-
+source_file="res://MiniGame/Labyrinthe/laby_r.png"
 [params]
 
 compress/mode=0

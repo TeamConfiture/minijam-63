@@ -2,16 +2,11 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/PH_InputB.png-ecd111bc475c25b9c32ac220099de65a.stex"
-metadata={
-"vram_texture": false
-}
+valid=false
 
 [deps]
 
-source_file="res://Docs/PH_InputB.png"
-dest_files=[ "res://.import/PH_InputB.png-ecd111bc475c25b9c32ac220099de65a.stex" ]
-
+source_file="res://MiniGame/Labyrinthe/BoutonLaby.png"
 [params]
 
 compress/mode=0
