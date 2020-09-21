@@ -12,7 +12,6 @@ extents = Vector2( 56.8436, 33.3445 )
 [node name="Hangar" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 3.70813, 1.05948 )
 texture = ExtResource( 1 )
 centered = false
 __meta__ = {

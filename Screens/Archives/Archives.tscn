@@ -40,8 +40,6 @@ bg_color = Color( 0.345098, 0.423529, 0.47451, 1 )
 [node name="Hangar" type="Node2D"]
 
 [node name="Background" type="Sprite" parent="."]
-position = Vector2( 3.70813, 1.05948 )
-scale = Vector2( 0.998641, 1.00029 )
 texture = ExtResource( 1 )
 centered = false
 
