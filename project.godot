@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="minijam-63"
-run/main_scene="res://Global/Menus/MainMenu.tscn"
+run/main_scene="res://Global/SplashScreen.tscn"
 config/icon="res://icon.png"
 
 [autoload]

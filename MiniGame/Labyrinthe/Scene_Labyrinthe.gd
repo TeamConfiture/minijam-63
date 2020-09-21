@@ -21,3 +21,8 @@ func _on_Labyrinthe_end_minigame():
 	print("Laby minigame succeed")
 	queue_free()
 	emit_signal("end_minigame")
+
+
+func _on_Button_pressed():
+	emit_signal("end_minigame")
+	queue_free()

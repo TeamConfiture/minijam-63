@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://MiniGame/Labyrinthe/Bouton_laby.tscn" type="PackedScene" id=1]
 [ext_resource path="res://MiniGame/Labyrinthe/Labyrinthe.gd" type="Script" id=2]
@@ -8,6 +8,9 @@
 [sub_resource type="DynamicFont" id=1]
 size = 42
 font_data = ExtResource( 4 )
+
+[sub_resource type="StyleBoxFlat" id=2]
+bg_color = Color( 0.164706, 0.215686, 0.278431, 1 )
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource( 3 )
@@ -45,10 +48,32 @@ margin_bottom = 397.189
 custom_fonts/font = SubResource( 1 )
 text = "Link each input to their respective output.
 Push buttons to slide tiles.
-Press the lone button to reshuffle the puzzle."
+Press the lone button to reshuffle the puzzle.
+If this puzzle is too hard, press button \"Solve\"."
 autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+margin_left = 129.0
+margin_top = 641.0
+margin_right = 222.0
+margin_bottom = 679.0
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 2 )
+custom_styles/focus = SubResource( 2 )
+custom_styles/disabled = SubResource( 2 )
+custom_styles/normal = SubResource( 2 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color_disabled = Color( 0.945098, 0.941176, 0.933333, 1 )
+custom_colors/font_color = Color( 0.945098, 0.941176, 0.933333, 1 )
+custom_colors/font_color_hover = Color( 0.945098, 0.941176, 0.933333, 1 )
+custom_colors/font_color_pressed = Color( 0.945098, 0.941176, 0.933333, 1 )
+text = "Solve"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 [connection signal="triggered" from="Bouton_laby" to="Labyrinthe" method="_on_Bouton_laby_triggered"]
 [connection signal="end_minigame" from="Labyrinthe" to="." method="_on_Labyrinthe_end_minigame"]
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]
